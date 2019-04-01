@@ -1,3 +1,12 @@
 <p>
   toplist works!
 </p>
+
+<button (click)="getFilms(); sortByRating(films)">Click and get a movie list in console and sort movies by rating</button>
+
+<ul *ngFor="let film of films; let i = index" >
+  <li> Rating: {{ films[i].rt_score }} </li>
+  <li> Title: {{ films[i].title }} </li>
+  <li> Directed by: {{ films[i].director }} </li>
+  <li> {{ films[i].description }} </li>
+</ul>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FilmsService } from '../films.service';
+import { Film } from '../film';
+
 
 @Component({
   selector: 'app-toplist',
@@ -7,9 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToplistComponent implements OnInit {
 
-  constructor() { }
+  constructor(private filmData: FilmsService) { }
+ 
+  filmUrl: Film[] = null;
+  films = [];
 
-  ngOnInit() {
+  sortByRating(films: Film[]): void {
+    films.sort(function(a, b) {
+      return b.rt_score - a.rt_score;
+    });
+    this.films = films  
   }
 
+
+
+  ngOnInit() { 
+    this.filmData.getFilm()
+    .subscribe(data => this.films = data);
+  }
+  
+  getFilms() {
+    this.filmData.getFilm()
+    .subscribe( film => {this.filmUrl = film;  console.log(this.filmUrl);} )
+  }
 }
+
