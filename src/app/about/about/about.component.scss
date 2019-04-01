@@ -9,17 +9,18 @@ $color-red: #92262c;
 $color-light-red: #b93d47;
 $color-light-light-red:#e06168;
 
+@media(max-width: 800px){
 
 .wrapper{
   display: flex;
   flex-direction: row;
   width: 200px;
+padding: 20px;
 }
-
-@media(max-width: 600px){
   main > div{
-    margin-top: 10px;
-    margin-left: 40px;
+    margin: 20px;
+    margin-top: 20px;
+    margin-left: 70px;
     width: 250px;
     height: 100px;
     background-color: $color-brown;

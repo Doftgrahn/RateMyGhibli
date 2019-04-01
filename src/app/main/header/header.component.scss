@@ -9,7 +9,6 @@ header {
   height: 80px;
   padding: 10px;
   background-color: $color-turqiose;
-}
   @media screen and (min-width: 800px) {
     height: 100px;
   }
@@ -32,18 +31,9 @@ header {
     margin-right: 20px;
     padding: 10px;
     transition: 0.5s;
-  }
     @media screen and (min-width: 800px) {
       display: none;
     }
-
-
-    li {
-
-      a {
-        margin-left: 10px;
-        color: black;
-        text-decoration: none;
 
     span {
       position: relative;
@@ -69,7 +59,6 @@ header {
 
       &:nth-child(3) {
         transform-origin: left;
-
       }
     }
 
