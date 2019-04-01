@@ -1,0 +1,21 @@
+@import '../../shared/variables';
+
+header {
+  padding: $regular-spacing;
+  background-color: lightblue;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+
+    li {
+      margin-left: 20px;
+
+      a {
+        color: black;
+        text-decoration: none;
+      }
+    }
+  }
+}

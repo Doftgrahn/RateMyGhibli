@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RateComponent } from './rate/rate.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [RateComponent],
   imports: [
     CommonModule
   ],

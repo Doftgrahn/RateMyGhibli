@@ -15,13 +15,14 @@ import { AboutModule } from './about/about.module';
 import { AddModule } from './add/add.module';
 import { ToplistModule } from './toplist/toplist.module';
 
-
 /*--
 Import Routing, DataService
 --*/
-import { AppRoutingModule } from './shared/app-routing.module';
+
 import { AppComponent } from './app.component';
 import { DataService } from './shared/data.service';
+import { AppRoutingModule } from './shared/app-routing.module';
+
 
 @NgModule({
   declarations: [
