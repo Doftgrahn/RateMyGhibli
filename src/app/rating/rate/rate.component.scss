@@ -1,1 +1,21 @@
 @import '../../shared/variables';
+
+/*....--------------...*/
+
+.rate {
+  height:90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__wrapper {
+    height: 80%;
+    width: 80%;
+    background-color: $color-green;
+  }
+
+  &__container {
+    background-color: $color-blue;
+  }
+}
