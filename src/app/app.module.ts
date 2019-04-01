@@ -1,17 +1,25 @@
-/*General stuff from @angular*/
+/*--General stuff from @angular
+--*/
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-/*Modules*/
-import { RatingModule } from './rating/rating.module';
+/*--
+Modules to import
+--*/
 import { MainModule } from './main/main.module';
+import { RatingModule } from './rating/rating.module';
+import { AboutModule } from './about/about.module';
+import { AddModule } from './add/add.module';
+import { ToplistModule } from './toplist/toplist.module';
 
-/*Import Routing, DataService*/
+
+/*--
+Import Routing, DataService
+--*/
 import { AppRoutingModule } from './shared/app-routing.module';
 import { AppComponent } from './app.component';
 import { DataService } from './shared/data.service';
-
 
 @NgModule({
   declarations: [
@@ -20,6 +28,9 @@ import { DataService } from './shared/data.service';
   imports: [
     MainModule,
     RatingModule,
+    AddModule,
+    AboutModule,
+    ToplistModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
