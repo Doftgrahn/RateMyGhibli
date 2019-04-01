@@ -1,48 +1,49 @@
 @import '../../shared/variables';
 
 header {
-  background-color: $color-turqiose;
   display: flex;
+  align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  height: 80px;
   width: 100%;
+  height: 80px;
   padding: 10px;
+  background-color: $color-turqiose;
   @media screen and (min-width: 800px) {
     height: 100px;
-    align-items: center;
   }
 
   h1 {
-    margin: 0;
+    font-weight: 800;
     font-size: 20px;
     display: block;
+    margin: 0;
   }
 
   .hamburger__container {
-    z-index: 100;
     position: relative;
+    z-index: 100;
     right: 0;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
-    transition: 0.5s;
-    padding: 10px;
     margin-right: 20px;
+    padding: 10px;
+    transition: 0.5s;
     @media screen and (min-width: 800px) {
       display: none;
     }
 
     span {
-      overflow: hidden;
-      z-index: 10;
       position: relative;
-      height: 4px;
-      width: 34px;
-      transition: 0.5s;
-      margin-bottom: 8px;
+      z-index: 10;
       display: block;
+      overflow: hidden;
+      width: 34px;
+      height: 4px;
+      margin-bottom: 8px;
+      transition: 0.5s;
       background-color: $color-black;
       @media screen and (min-width: 800px) {
         display: none;
@@ -63,13 +64,13 @@ header {
 
     &.active span {
       &:nth-child(1) {
-        transform: rotate(45deg);
         left: 2px;
+        transform: rotate(45deg);
       }
 
       &:nth-child(2) {
-        transform: rotate(315deg);
         right: 2px;
+        transform: rotate(315deg);
       }
 
       &:nth-child(3) {
@@ -79,30 +80,33 @@ header {
   }
 
   .hamburger__meny {
-    z-index: 10;
-    background-color: $color-green;
     position: absolute;
-    width: 100%;
-    right: 100%;
-    padding: 80px 20px 50px;
-    height: 100vh;
-    transition: 0.5s;
-    display: flex;
+    z-index: 10;
     top: 0;
+    right: 100%;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    padding: 80px 20px 50px;
+    transition: 0.5s;
+    background-color: $color-green;
     @media screen and (min-width: 800px) {
-      padding: 0;
       position: static;
       width: auto;
       height: auto;
+      padding: 0;
       background-color: inherit;
     }
 
     ul {
+      font-size: 26px;
+      font-weight: 800;
       padding: $regular-spacing;
       list-style-type: none;
       @media screen and (min-width: 800px) {
         display: inline-flex;
         margin: 0;
+        font-size: 1.4em;
       }
 
       li {
@@ -112,8 +116,8 @@ header {
         }
 
         a {
-          color: $color-black;
           text-decoration: none;
+          color: $color-black;
 
           &:hover {
             color: $color-blue;
