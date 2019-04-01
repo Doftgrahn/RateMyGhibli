@@ -1,9 +1,23 @@
 <header>
-  <ul>
-    <li> <a routerLink="/home">Home</a></li>
-    <li> <a routerLink="/review">Review</a></li>
-    <li> <a routerLink="/rating">Rating</a></li>
-    <li> <a routerLink="/topList">Toplist</a></li>
-    <li> <a routerLink="/about">About</a></li>
-  </ul>
+
+<h1>Rate my Ghibli!</h1>
+
+  <div class="hamburger__container" (click)="hamburger()" [ngClass]="{'active': toggle}">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+
+  <div class="hamburger__meny" [ngClass]="{'hamburger__active': toggle }">
+    <ul>
+      <li> <a routerLink="/home" (click)="toggleOff()">Home</a></li>
+      <li> <a routerLink="/review" (click)="toggleOff()">Review</a></li>
+      <li> <a routerLink="/rating" (click)="toggleOff()">Rating</a></li>
+      <li> <a routerLink="/topList" (click)="toggleOff()">Toplist</a></li>
+      <li> <a routerLink="/about" (click)="toggleOff()">About</a></li>
+    </ul>
+  </div>
+
+
 </header>
