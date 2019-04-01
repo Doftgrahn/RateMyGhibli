@@ -1,9 +1,12 @@
 @import '../../shared/variables';
-
 /*....--------------...*/
 
+article {
+  padding:20px;
+}
+
 .rate {
-  height:1000px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,7 +15,7 @@
   &__wrapper {
     height: 80%;
     width: 80%;
-    background-color: $color-green;
+    background-color: $color-turqiose;
   }
 
   &__container {
