@@ -2,7 +2,7 @@
 
 header {
   padding: $regular-spacing;
-  background-color: lightblue;
+  background-color: $color-turqiose;
 
   ul {
     display: flex;
@@ -13,7 +13,7 @@ header {
       margin-left: 20px;
 
       a {
-        color: black;
+        color: $color-black;
         text-decoration: none;
       }
     }

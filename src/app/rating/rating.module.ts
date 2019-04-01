@@ -7,6 +7,6 @@ import { RateComponent } from './rate/rate.component';
   imports: [
     CommonModule
   ],
-  exports: []
+  exports: [RateComponent]
 })
 export class RatingModule { }
