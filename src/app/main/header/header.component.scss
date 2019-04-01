@@ -15,9 +15,8 @@ header {
 
   h1 {
     font-weight: 800;
-    font-size: 20px;
+    font-size: 25px;
     display: block;
-    margin: 0;
   }
 
   .hamburger__container {
@@ -116,6 +115,7 @@ header {
         }
 
         a {
+          outline: none;
           text-decoration: none;
           color: $color-black;
 
