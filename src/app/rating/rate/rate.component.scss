@@ -1,11 +1,21 @@
 @import '../../shared/variables';
 
-div {
-  width: 100%;
+/*....--------------...*/
 
-  span {
-    margin-top: $regular-spacing;
-    display: block;
-    text-align: center;
+.rate {
+  height:1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__wrapper {
+    height: 80%;
+    width: 80%;
+    background-color: $color-green;
+  }
+
+  &__container {
+    background-color: $color-blue;
   }
 }
