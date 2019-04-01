@@ -1,14 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
-
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
-
-
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
   margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 800;
+  font-family: 'Roboto', sans-serif;
+}
+
+a,
+button,
+input,
+li,
+p,
+span,
+ul {
+  font-family: 'Montserrat', sans-serif;
 }

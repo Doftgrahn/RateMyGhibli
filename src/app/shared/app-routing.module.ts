@@ -13,7 +13,6 @@ import { ToplistComponent } from '../toplist/toplist/toplist.component';
 /*About*/
 import { AboutComponent } from '../about/about/about.component';
 
-
 const routes: Routes = [
   { path: 'home', component: HomepageComponent },
   { path: 'review', component: AddReviewComponent },
@@ -22,7 +21,6 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
