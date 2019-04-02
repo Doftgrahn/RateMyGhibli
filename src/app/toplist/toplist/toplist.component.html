@@ -1,12 +1,17 @@
-<p>
-  toplist works!
-</p>
+<div class="container">
+  <h2> Top list of Ghibli movies </h2>
+  
+  <div class="outsideFilmContainer" *ngFor="let film of films; let img of pictures; let i = index"> 
+    <span> {{ [i+1]}}</span>
+     
 
-<button (click)="getFilms(); sortByRating(films)">Click and get a movie list in console and sort movies by rating</button>
+    <div class="filmContainer">
+      <img src="{{ pictures[i] }}">
+      <p> Rotted tomatoes rating: {{ films[i].rt_score }} </p>
+      <p> Title: {{ films[i].title }} </p>
+      <p>  Directed by: {{ films[i].director }} </p>
+      <p> {{ films[i].description }}</p>
+    </div>
+  </div>
 
-<ul *ngFor="let film of films; let i = index" >
-  <li> Rating: {{ films[i].rt_score }} </li>
-  <li> Title: {{ films[i].title }} </li>
-  <li> Directed by: {{ films[i].director }} </li>
-  <li> {{ films[i].description }} </li>
-</ul>
+</div>
