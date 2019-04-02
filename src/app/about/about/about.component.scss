@@ -1,39 +1,33 @@
-$color-white: #ece3d4;
-$color-green: #58a556;
-$color-turqiose: #2d9b8e;
-$color-blue: #01285d;
-$color-black: #000000;
-$color-gray: #73787b;
-$color-brown: #6e3a1d;
-$color-red: #92262c;
-$color-light-red: #b93d47;
-$color-light-light-red:#e06168;
+@import '../../shared/variables';
 
 @media(max-width: 800px){
 
 .wrapper{
+  // background-image: url("https://wallpaperaccess.com/full/847949.png");
   display: flex;
   flex-direction: row;
-  width: 200px;
-padding: 20px;
-}
-  main > div{
-    margin: 20px;
-    margin-top: 20px;
-    margin-left: 70px;
-    width: 250px;
-    height: 100px;
-    background-color: $color-brown;
-    border-radius: 5px;
-    border: groove 2px;
 
-  }
-div > h2{
-    letter-spacing: 2px;
-    padding-top: 40px;
-}
-.Kamphol{
-  background-image: url("https://occ-0-987-990.1.nflxso.net/dnm/api/v5/rendition/412e4119fb212e3ca9f1add558e2e7fed42f8fb4/AAAABUiNknX5gYJfI1umSAuReJcaN8rx1RoEsp7siUAKwLJETsEq-Pu9Z_qF8uyT1FDnzRTY1SETEqe04rrfLVphGkSO2jVlCm4CHxyut7iyj9VrUJTVLCsN7jzumX3mPPu1WfdH37sDog.jpg");
+  padding: 20px;
 }
 
+main > div{
+  margin: 20px;
+  margin-top: 100px;
+  margin-left: 40px;
+  width: 300px;
+  height: 150px;
+}
+
+div > p{
+  text-align: center;
+  letter-spacing: 2px;
+  color: $color-black;
+}
+.pPic{
+ border: inset 1px $color-white;
+ width: 145px;
+ border-radius: 100%;
+ height: 150px;
+ margin-left: 74px;
+}
 }
