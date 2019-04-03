@@ -20,7 +20,6 @@ Import Routing, DataService
 --*/
 
 import { AppComponent } from './app.component';
-import { DataService } from './shared/data.service';
 import { AppRoutingModule } from './shared/app-routing.module';
 
 
@@ -39,7 +38,7 @@ import { AppRoutingModule } from './shared/app-routing.module';
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [DataService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

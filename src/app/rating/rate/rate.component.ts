@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { DataService } from '../../shared/data.service';
+import { FilmsService } from '../../shared/films.service';
+
+import { Film } from '../../shared/film';
 
 @Component({
   selector: 'app-rate',
@@ -9,19 +11,17 @@ import { DataService } from '../../shared/data.service';
 })
 export class RateComponent implements OnInit {
   searchText: any;
-  films;
+  films: Film[] = [];
 
 
+  constructor(private filmData: FilmsService) { }
 
-
-
-
-
-
-
-
-  constructor(private ds: DataService) {this.films = this.ds.heroes;}
-
-  ngOnInit() { }
+  ngOnInit() {
+    this.filmData.getFilm().subscribe(data => {
+      this.films = data.sort((a, b) => {
+        return b.release_date - a.release_date;
+      })
+    })
+  }
 
 }

@@ -13,11 +13,8 @@
 
 
     <div class="rate__container" *ngFor="let f of films | filter:searchText">
-      <p>{{f.name}}</p>
-
+      <p>{{f.title}} <span>{{f.release_date}}</span></p>
     </div>
-
-
 
 
 
