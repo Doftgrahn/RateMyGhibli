@@ -11,7 +11,7 @@ import { Film } from '../../shared/film';
 export class ToplistComponent implements OnInit {
 
   constructor(private filmData: FilmsService) { }
-  
+
   films: Film[] = [];
   //fimls.length = 2;
   //.splice(10, this.films.length)
@@ -21,14 +21,13 @@ export class ToplistComponent implements OnInit {
     this.films = this.films.splice(19, this.films.length);
   }
 
-  ngOnInit() { 
+  ngOnInit() {
     this.filmData.getFilm()
     .subscribe(data => this.films = data.sort(function(a, b) {
       return b.rt_score - a.rt_score;
     })
     )
   }
-
 
 
   pictures = ['assets/pics/Only-Yesterday.jpg',
@@ -53,9 +52,9 @@ export class ToplistComponent implements OnInit {
     'assets/pics/Tales-from-Earthsea.jpg'
   ];
 
-  
+
   //FUNCTIONs IF I WANT TO ADD LIST AND SORT IT ON A BUTTON
-  /* 
+  /*
   filmList: Film[] = null;
   getFilms() {
     this.filmData.getFilm()
@@ -69,4 +68,3 @@ export class ToplistComponent implements OnInit {
   }
   }*/
 }
-
