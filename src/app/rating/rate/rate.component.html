@@ -7,9 +7,19 @@
 <section class="rate">
 
 
-  <div class="rate__wrapper">
 
-    <div class="rate__container"></div>
+  <div class="rate__wrapper">
+    <input type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search!" />
+
+
+    <div class="rate__container" *ngFor="let f of films | filter:searchText">
+      <p>{{f.name}}</p>
+
+    </div>
+
+
+
+
 
   </div>
 

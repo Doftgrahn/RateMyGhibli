@@ -1,8 +1,7 @@
 @import '../../shared/variables';
 /*....--------------...*/
-
 article {
-  padding:20px;
+  padding: 20px;
 }
 
 .rate {
@@ -21,4 +20,7 @@ article {
   &__container {
     background-color: $color-blue;
   }
+}
+p {
+  color: $color-white;
 }
