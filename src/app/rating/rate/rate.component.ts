@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RateComponent implements OnInit {
 
+
+
+
+
+
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

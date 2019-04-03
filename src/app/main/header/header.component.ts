@@ -8,6 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  toggle: boolean = false;
+
+  hamburger() {
+    this.toggle = !this.toggle;
+  }
+
+  toggleOff() {
+    this.toggle = false;
+  }
+
+
+
+
 
   constructor() { }
 

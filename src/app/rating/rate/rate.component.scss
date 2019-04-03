@@ -1,1 +1,24 @@
 @import '../../shared/variables';
+/*....--------------...*/
+
+article {
+  padding:20px;
+}
+
+.rate {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__wrapper {
+    height: 80%;
+    width: 80%;
+    background-color: $color-turqiose;
+  }
+
+  &__container {
+    background-color: $color-blue;
+  }
+}

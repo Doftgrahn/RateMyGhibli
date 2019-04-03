@@ -1,3 +1,19 @@
-<p>
-  toplist works!
-</p>
+<div class="container">
+  <h2> Top list of Ghibli movies </h2>
+
+  <button (click)="getShorterList()">Shorter list?</button>
+  
+  <div class="outsideFilmContainer" *ngFor="let film of films; let img of pictures; let i = index"> 
+    <span> {{ [i+1]}}</span>
+     
+
+    <div class="filmContainer">
+      <img src="{{ pictures[i] }}">
+      <p> Rotted tomatoes rating: {{ films[i].rt_score }} </p>
+      <p> Title: {{ films[i].title }} </p>
+      <p>  Directed by: {{ films[i].director }} </p>
+      <p> {{ films[i].description }}</p>
+    </div>
+  </div>
+
+</div>

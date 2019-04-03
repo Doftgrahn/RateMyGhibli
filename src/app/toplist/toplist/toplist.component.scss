@@ -1,0 +1,37 @@
+@import '../../shared/variables';
+
+* {
+    cursor: url('https://vignette.wikia.nocookie.net/studio-ghibli/images/4/49/Cursor1.png'),pointer !important;
+}
+
+.container {
+    padding: 20px;
+}
+
+img {
+    float: left;
+    width: 200px;
+    height: auto;
+    padding-right: 30px;
+}
+
+.filmContainer {
+    overflow: auto;
+    margin-bottom: 30px;
+    //border: 1px solid gray;
+    //border-radius: 4px;
+    //background-color: lightgrey;
+}
+
+.outsideFilmContainer {
+    padding-left: 70px;
+}
+
+span {
+    top: 130px;
+    left: -50px;
+    color: brown;
+    position: relative;
+    font-size: 30px;
+    font-weight: bold;
+} 
