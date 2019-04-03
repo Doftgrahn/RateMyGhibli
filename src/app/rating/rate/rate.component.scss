@@ -5,7 +5,7 @@ article {
 }
 
 .rate {
-  height: 100vh;
+  background-color: $color-red;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,13 +14,13 @@ article {
   &__wrapper {
     height: 80%;
     width: 80%;
-    background-color: $color-turqiose;
   }
 
   &__container {
-    background-color: $color-blue;
   }
 }
-p {
+span {
   color: $color-white;
+  padding:20px;
+  margin:20px;
 }

@@ -16,11 +16,12 @@ import { AddModule } from './add/add.module';
 import { ToplistModule } from './toplist/toplist.module';
 
 /*--
-Import Routing, DataService
+Import Routing, DataService and pipe
 --*/
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './shared/app-routing.module';
+
 
 
 @NgModule({

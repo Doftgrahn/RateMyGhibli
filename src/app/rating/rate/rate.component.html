@@ -1,23 +1,12 @@
-<article>
-  <span>leta och rejta - lista som visar alla saker, lite kompaktare, med möjlighet att sätta betyg, samt sortera och filtrera listan
-  </span>
-</article>
 
 
 <section class="rate">
 
-
-
   <div class="rate__wrapper">
     <input type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search!" />
 
-
-    <div class="rate__container" *ngFor="let f of films | filter:searchText">
-      <p>{{f.title}} <span>{{f.release_date}}</span></p>
+    <div class="rate__container" *ngFor="let f of films | Moviefilter:searchText">
+      <span>{{f.title}}</span>
     </div>
-
-
-
   </div>
-
 </section>

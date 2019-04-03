@@ -1,21 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RateComponent } from './rate/rate.component';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+
+import { FilterPipe } from '../shared/filter.pipe';
 
 /*----*/
-import { Pipe, PipeTransform } from '@angular/core';
-
-
-
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
-  declarations: [RateComponent],
+  declarations: [RateComponent, FilterPipe,
+],
   imports: [
     CommonModule,
     FormsModule,
-    Ng2SearchPipeModule,
   ],
   exports: [RateComponent]
 })
