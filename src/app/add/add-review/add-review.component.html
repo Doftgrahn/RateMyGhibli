@@ -1,3 +1,43 @@
 <p>
   add-review works!
 </p>
+
+<h2>Leave a review!</h2>
+
+<div class="formular" [formGroup]="reviewForm">
+
+  <div class="form">
+    <label>Movie title *</label>
+    <input type="text" placeholder="Leon"
+    [formControl]="movieTitleControl"
+		[class.invalid]="movieTitleControl.invalid && (movieTitleControl.touched || movieTitleControl.dirty)"
+		[class.valid]="movieTitleControl.valid && (movieTitleControl.touched || movieTitleControl.dirty)"/>
+    <div class="errorMessage" *ngIf="movieTitlecontrol.errors?.required && (movieTitleControl.touched || movieTitleControl.dirty)">
+			Movie title can't be empty!
+		</div>
+  </div>
+
+
+  <div class="form">
+    <label>Year of release *</label>
+    <input type="text" placeholder="1994"/>
+  </div>
+
+  <div class="form">
+    <label>Your comment *</label>
+    <textarea type="text" placeholder="Tell us what did you like about this movie" id="comments">
+    </textarea>
+  </div>
+
+  <div class="form">
+    <label>Your name</label>
+    <input type="text" placeholder="John"/>
+  </div>
+
+  <input type="checkbox" id="checkbox"/>I want to remain incognito <br/>
+
+  <button class="btn">Send</button>
+  <p>* required fields</p>
+
+  <app-show-review></app-show-review>
+</div>
