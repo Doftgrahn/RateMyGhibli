@@ -5,7 +5,7 @@
   <div class="rate__wrapper">
     <input type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search!" />
 
-    <div class="rate__container" *ngFor="let f of films | Moviefilter:searchText">
+    <div class="rate__container" *ngFor="let f of films | Moviefilter:searchText : title">
       <span>{{f.title}}</span>
     </div>
   </div>

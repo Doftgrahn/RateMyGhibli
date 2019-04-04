@@ -8,19 +8,12 @@ import { Film } from '../shared/film';
 
 export class FilterPipe implements PipeTransform {
 
-  transform(films: Film[], searchTerm: string): Film[] {
-    if (!films || !searchTerm) {
-      return films;
-    }
-    return films.filter(film => {
-      film.title.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1;
+  transform(films: Film[], filterData: string): Film[] {
+    if (!films) return [];
+    if (!filterData) return films;
+    filterData = filterData.toString().toLowerCase();
+    return films.filter(it => {
+      return it.title.toLowerCase().includes(filterData)
     })
   }
 }
-
-
-/*
-
-
-
-*/
