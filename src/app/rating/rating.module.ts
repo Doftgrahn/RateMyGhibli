@@ -8,8 +8,8 @@ import { FilterPipe } from '../shared/filter.pipe';
 /*----*/
 
 @NgModule({
-  declarations: [RateComponent, FilterPipe,
-],
+  declarations: [RateComponent, FilterPipe
+  ],
   imports: [
     CommonModule,
     FormsModule,
