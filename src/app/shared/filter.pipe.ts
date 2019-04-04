@@ -12,8 +12,8 @@ export class FilterPipe implements PipeTransform {
     if (!films) return [];
     if (!filterData) return films;
     filterData = filterData.toString().toLowerCase();
-    return films.filter(it => {
-      return it.title.toLowerCase().includes(filterData)
+    return films.filter(movie => {
+      return movie.title.toLowerCase().includes(filterData)
     })
   }
 }
