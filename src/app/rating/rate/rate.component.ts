@@ -7,6 +7,7 @@ import { Film } from '../../shared/film';
   templateUrl: './rate.component.html',
   styleUrls: ['./rate.component.scss']
 })
+
 export class RateComponent implements OnInit {
   searchText: Film[];       /*For Search*/
   films: Film[] = [];      /*Get Film*/
@@ -17,13 +18,11 @@ export class RateComponent implements OnInit {
   };
   getRated = localStorage.getItem('rated');
 
-
   showRatedinDom() {
     if (this.getRated !== null) {
       this.state.rated = JSON.parse(this.getRated)
       this.films = this.state.rated
     }
-
   }
 
   constructor(private filmData: FilmsService) { }

@@ -5,7 +5,7 @@
       <input id="search" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search!" />
     </div>
 
-    <div class="rate__container" *ngFor="let ghibli of films | Moviefilter: searchText : title">
+    <div class="rate__container" *ngFor="let ghibli of films | Moviefilter: searchText">
       <span class="rate__container__info">{{ghibli.title}}</span>
       <app-stars [rating]="ghibli.rating" [id]="ghibli.id" (ratingClick)="ratingComponentClick($event)"></app-stars>
     </div>
