@@ -8,11 +8,24 @@ import { Film } from '../../shared/film';
   styleUrls: ['./rate.component.scss']
 })
 export class RateComponent implements OnInit {
-  searchText: Film[];
-  films: Film[] = [];
-
-  ratingClicked: number;
+  searchText: Film[];       /*For Search*/
+  films: Film[] = [];      /*Get Film*/
+  ratingClicked: Film[];
   itemIdRatingClicked: string;
+  state: any = {
+    rated: []
+  };
+  getRated = localStorage.getItem('rated');
+
+
+  showRatedinDom(ghibliData) {
+    if (this.getRated !== null) {
+      this.state.rated = JSON.parse(this.getRated)
+      /*RATED TODO!!!!*/
+    }
+
+  }
+
 
   constructor(private filmData: FilmsService) { }
 
@@ -32,5 +45,10 @@ export class RateComponent implements OnInit {
       this.ratingClicked = clickObj.rating;
       this.itemIdRatingClicked = item.title;
     }
+    this.state.rated.push({
+      id: clickObj.id,
+      rating: clickObj.rating
+    })
+    localStorage.setItem('Rating', JSON.stringify(this.state.rated));
   }
 }

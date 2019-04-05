@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import './app/shared/variables';
 
 * {
   box-sizing: border-box;
@@ -14,6 +15,7 @@ h1,
 h2,
 h3,
 h4 {
+  color: $color-black;
   font-weight: 800;
   font-family: 'Roboto', sans-serif;
 }
@@ -25,5 +27,6 @@ li,
 p,
 span,
 ul {
+  color: $color-black;
   font-family: 'Montserrat', sans-serif;
 }

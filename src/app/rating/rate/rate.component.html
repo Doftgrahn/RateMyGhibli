@@ -6,9 +6,7 @@
     </div>
 
     <div class="rate__container" *ngFor="let ghibli of films | Moviefilter: searchText : title">
-      <span class="rate__container__info">
-        {{ghibli.title}}
-      </span>
+      <span class="rate__container__info">{{ghibli.title}}</span>
       <app-stars [rating]="ghibli.rating" [id]="ghibli.id" (ratingClick)="ratingComponentClick($event)"></app-stars>
     </div>
 

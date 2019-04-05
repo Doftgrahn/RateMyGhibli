@@ -1,18 +1,24 @@
 @import '../../shared/variables';
 /*....--------------...*/
 .rate {
-  min-height: 100%;
-  background-color: $color-white;
+  background-image: url("https://static.boredpanda.com/blog/wp-content/uploads/2016/06/download-free-studio-ghibli-wallpapers-miyazaki-anime-44-57615b19e20b0__880.jpg");
+  padding: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
   &__wrapper {
+    border-radius: 20px;
+    padding: 0.2em;
     width: 95%;
+    background-color: #daefee7a;
     margin-bottom: $regular-spacing;
     @media screen and (min-width: 800px) {
       max-width: 30%;
+      padding: 20px;
     }
 
     .filter__container {
@@ -41,16 +47,19 @@
     }
 
     .rate__container {
-      padding: 0 0.2em;
+      margin-top: 10px;
+      border-radius: 20px;
+      padding: 0.1em;
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      border: 1px solid $color-brown;
+      border: 1px solid $color-red;
+      flex-wrap: nowrap;
 
       &__info {
-        margin-top: 20px;
-        padding:4px;
+        cursor: pointer;
+        padding: 0.5em;
       }
 
       app-stars {
