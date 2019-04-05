@@ -11,12 +11,26 @@ export class RateComponent implements OnInit {
   searchText: Film[];
   films: Film[] = [];
 
+  ratingClicked: number;
+  itemIdRatingClicked: string;
 
   constructor(private filmData: FilmsService) { }
 
   ngOnInit() {
     this.filmData.getFilm().subscribe(ghibliData => {
-      this.films = ghibliData
+      this.films = ghibliData.map(e => {
+        e.rating = '';
+        return e;
+      })
     })
+  }
+
+  ratingComponentClick(clickObj: any): void {
+    const item = this.films.find(((i: any) => i.id === clickObj.id));
+    if (!!item) {
+      item.rating = clickObj.rating;
+      this.ratingClicked = clickObj.rating;
+      this.itemIdRatingClicked = item.title;
+    }
   }
 }

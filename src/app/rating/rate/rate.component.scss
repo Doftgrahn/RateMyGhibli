@@ -1,26 +1,63 @@
 @import '../../shared/variables';
 /*....--------------...*/
-article {
-  padding: 20px;
-}
-
 .rate {
-  background-color: $color-red;
+  min-height: 100%;
+  background-color: $color-white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
   &__wrapper {
-    height: 80%;
-    width: 80%;
+    width: 95%;
+    margin-bottom: $regular-spacing;
+    @media screen and (min-width: 800px) {
+      max-width: 30%;
+    }
+
+    .filter__container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      label {
+        margin-top: 10px;
+        padding: 20px;
+      }
+
+      input {
+        padding: 20px;
+        width: 50%;
+        margin: 20px;
+        border-radius: 20px;
+        height: 40px;
+        outline: none;
+        border: none;
+
+        &::placeholder {
+          padding: 20px;
+        }
+      }
+    }
+
+    .rate__container {
+      padding: 0 0.2em;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $color-brown;
+
+      &__info {
+        margin-top: 20px;
+        padding:4px;
+      }
+
+      app-stars {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: 20px;
+      }
+    }
   }
-
-  &__container {}
-}
-
-span {
-  color: $color-white;
-  padding: 20px;
-  margin: 20px;
 }

@@ -1,8 +1,20 @@
 <section class="rate">
   <div class="rate__wrapper">
-    <input type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search!" />
-    <div class="rate__container" *ngFor="let f of films | Moviefilter:searchText : title">
-      <span>{{f.title}}</span>
+    <div class="filter__container">
+      <label for="search">Filter</label>
+      <input id="search" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search!" />
     </div>
+
+
+    <div class="rate__container" *ngFor="let ghibli of films | Moviefilter: searchText : title">
+      <span class="rate__container__info">
+        {{ghibli.title}}
+      </span>
+      <app-stars [rating]="ghibli.rating" [id]="ghibli.id" (ratingClick)="ratingComponentClick($event)"></app-stars>
+    </div>
+
+    <p *ngIf="!ratingClicked">Rate your movie!</p>
+    <p *ngIf="ratingClicked">The movie {{itemIdRatingClicked}} has been given {{ratingClicked}} stars</p>
+
   </div>
 </section>
