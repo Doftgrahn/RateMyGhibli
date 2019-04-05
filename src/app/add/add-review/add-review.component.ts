@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { FormControl, Validators, AbstractControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -7,11 +7,18 @@ import { FormControl, Validators, AbstractControl, FormGroup } from '@angular/fo
   styleUrls: ['./add-review.component.scss']
 })
 export class AddReviewComponent implements OnInit {
+  formContent: object = {
+    title: '',
+    year: '',
+    comment: '',
+    username: ''
+  };
+
   reviewForm: FormGroup = new FormGroup({
-		movieTitleControl: new FormControl('Leon', [Validators.required, Validators.minLength(1)]),
-		releaseYearControl: new FormControl([Validators.required]),
-    commentFieldControl: new FormControl([Validators.required]),
-    usersNameControl: new FormControl([Validators.required])
+		movieTitleControl: new FormControl('', [Validators.required, Validators.minLength(2)]),
+		releaseYearControl: new FormControl('', [Validators.required, this.isNumber]),
+    commentFieldControl: new FormControl('',[Validators.required]),
+    usersNameControl: new FormControl('', [Validators.required])
 		}
 	);
   movieTitleControl: AbstractControl;
@@ -19,9 +26,30 @@ export class AddReviewComponent implements OnInit {
   commentFieldControl: AbstractControl;
   usersNameControl: AbstractControl;
 
+
+  showWhatUserWrote() {
+    console.log(this.movieTitleControl.value);
+    this.formContent.title = this.movieTitleControl.value;
+    this.formContent.year = this.releaseYearControl.value,
+    this.formContent.comment =  this.commentFieldControl.value,
+    this.formContent.username = this.usersNameControl.value
+  }
+
   constructor() { }
 
   ngOnInit() {
+    this.movieTitleControl = this.reviewForm.controls['movieTitleControl'];
+		this.releaseYearControl = this.reviewForm.controls['releaseYearControl'];
+    this.commentFieldControl = this.reviewForm.controls['commentFieldControl'];
+    this.usersNameControl = this.reviewForm.controls['usersNameControl'];
   }
+
+  isNumber(x: string) {
+     let regex = /^[0-9]+$/;
+     if (!x.value.trim().match(regex)) {
+       return { isNumber: true };
+     }
+     return null;
+   }
 
 }

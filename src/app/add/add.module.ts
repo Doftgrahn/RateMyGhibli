@@ -8,7 +8,8 @@ import { ShowReviewComponent } from './add-review/show-review/show-review.compon
   declarations: [AddReviewComponent, ShowReviewComponent],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ]
 })
 export class AddModule { }

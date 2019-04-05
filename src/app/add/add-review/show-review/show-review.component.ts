@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-show-review',
@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./show-review.component.scss']
 })
 export class ShowReviewComponent implements OnInit {
+  @Input() reviewInfo: object = {
+    title: '',
+    year: '',
+    comment: '',
+    username: ''
+  };
 
   constructor() { }
 
   ngOnInit() {
   }
+
 
 }
