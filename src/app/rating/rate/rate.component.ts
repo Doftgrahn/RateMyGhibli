@@ -18,14 +18,13 @@ export class RateComponent implements OnInit {
   getRated = localStorage.getItem('rated');
 
 
-  showRatedinDom(ghibliData) {
+  showRatedinDom() {
     if (this.getRated !== null) {
       this.state.rated = JSON.parse(this.getRated)
-      /*RATED TODO!!!!*/
+      this.films = this.state.rated
     }
 
   }
-
 
   constructor(private filmData: FilmsService) { }
 
@@ -36,6 +35,7 @@ export class RateComponent implements OnInit {
         return e;
       })
     })
+    this.showRatedinDom()
   }
 
   ratingComponentClick(clickObj: any): void {
