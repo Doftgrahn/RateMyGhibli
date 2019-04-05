@@ -13,19 +13,12 @@ export class ToplistComponent implements OnInit {
   constructor(private filmData: FilmsService) { }
 
   films: Film[] = [];
-  //fimls.length = 2;
-  //.splice(10, this.films.length)
-
-  getShorterList() {
-    console.log('Does it work?');
-    this.films = this.films.splice(19, this.films.length);
-  }
 
   ngOnInit() {
     this.filmData.getFilm()
     .subscribe(data => this.films = data.sort(function(a, b) {
       return b.rt_score - a.rt_score;
-    })
+    }).filter((movie,index) => index < 5)
     )
   }
 
@@ -34,8 +27,8 @@ export class ToplistComponent implements OnInit {
     'assets/pics/The-tale-of-princess-kaguya.jpg',
     'assets/pics/Grave-of-the-Fireflies.jpg',
     'assets/pics/Spirited-Away.jpg',
-    'assets/pics/Kikis-Delivery-Service.jpg',
-    'assets/pics/Castle-in-the-Sky.jpg',
+    'assets/pics/Kikis-Delivery-Service.jpg'
+    /*'assets/pics/Castle-in-the-Sky.jpg',
     'assets/pics/ariety.jpg',
     'assets/pics/porco-rosso.jpg',
     'assets/pics/My-Neighbor-Totoro.jpg',
@@ -49,7 +42,7 @@ export class ToplistComponent implements OnInit {
     'assets/pics/From-up-on-poppy-hill.jpg',
     'assets/pics/Pom-Poko.jpg',
     'assets/pics/My-Neighbors-the-Yamadas.jpeg',
-    'assets/pics/Tales-from-Earthsea.jpg'
+    'assets/pics/Tales-from-Earthsea.jpg'*/
   ];
 
 
@@ -67,4 +60,5 @@ export class ToplistComponent implements OnInit {
     this.filmList = films;
   }
   }*/
+
 }
