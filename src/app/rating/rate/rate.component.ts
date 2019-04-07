@@ -14,17 +14,12 @@ export class RateComponent implements OnInit {
   films: Film[] = [];      /*Get Film*/
   ratingClicked: Film[];
   itemIdRatingClicked: string;
-  getRated : any;
+  getRated: any;
   state: any = {
     rated: []
   };
+  parsedItems: any;
 
-
-  showRatedinDom() {
-    if (this.getRated !== null) {
-      this.state.rated = JSON.parse(this.getRated)
-    }
-  }
 
   ratingComponentClick(clickObj: any): void {
     const item = this.films.find(((i: any) => i.id === clickObj.id));
@@ -43,28 +38,22 @@ export class RateComponent implements OnInit {
 
   ngOnInit() {
     this.getRated = localStorage.getItem('rating');
-    this.getRated = JSON.parse(this.getRated);
+    this.parsedItems = JSON.parse(this.getRated);
+
+    let filterRating = (fil: any, e: any) => {
+      return fil.rating === e.rating
+    }
+    let filterId = (fil: any, e: any) => {
+      return fil.id === e.rating
+    }
 
     this.filmData.getFilm().subscribe(ghibliData => {
       this.films = ghibliData.map(e => {
-
-        let test = this.getRated.filter(function(item) {
-         return item.id === e.id;
-        });
-        // let test = this.getRated.filter(rating => {
-        //   if(rating.id == e.id) {
-        //     return rating.rating;
-        //   }
-        //
-        // })
-
-        if(test) {
-          e.rating = test;
-          console.log(test);
-        }else {
-          e.rating = '';
+        e.rating = '';
+        if (!e.rating && !e.id && this.state.rating !== null) {
+          e.rating = this.parsedItems.filter(filterRating);
+          e.id = this.parsedItems.filter(filterId)
         }
-
         return e;
       })
     })
