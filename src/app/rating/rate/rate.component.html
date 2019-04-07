@@ -1,16 +1,18 @@
-<article>
-  <span>leta och rejta - lista som visar alla saker, lite kompaktare, med möjlighet att sätta betyg, samt sortera och filtrera listan
-  </span>
-</article>
-
-
 <section class="rate">
-
-
   <div class="rate__wrapper">
+    <div class="filter__container">
 
-    <div class="rate__container"></div>
+      <label for="search">Filter</label>
+      <input id="search" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search!" />
+    </div>
+
+    <div class="rate__container" *ngFor="let ghibli of films | Moviefilter: searchText">
+      <span class="rate__container__info">{{ghibli.title}}</span>
+      <app-stars [rating]="ghibli.rating" [id]="ghibli.id" (ratingClick)="ratingComponentClick($event)"></app-stars>
+    </div>
+
+    <p *ngIf="!ratingClicked">Rate your movie!</p>
+    <p *ngIf="ratingClicked">The movie {{itemIdRatingClicked}} has been given {{ratingClicked}} stars</p>
 
   </div>
-
 </section>
