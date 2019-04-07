@@ -14,20 +14,15 @@ export class RateComponent implements OnInit {
   films: Film[] = [];      /*Get Film*/
   ratingClicked: Film[];
   itemIdRatingClicked: string;
-
+  getRated : any;
   state: any = {
     rated: []
   };
-  getRated = localStorage.getItem('rated');
+
 
   showRatedinDom() {
     if (this.getRated !== null) {
       this.state.rated = JSON.parse(this.getRated)
-      this.films.map(e => {
-        e.id = this.state.rated.id;
-        e.rating = this.state.rated.rating;
-        return e;
-      })
     }
   }
 
@@ -42,16 +37,34 @@ export class RateComponent implements OnInit {
       id: clickObj.id,
       rating: clickObj.rating
     })
-    localStorage.setItem('Rating', JSON.stringify(this.state.rated));
+    localStorage.setItem('rating', JSON.stringify(this.state.rated));
   }
 
 
-
   ngOnInit() {
-    this.showRatedinDom();
+    this.getRated = localStorage.getItem('rating');
+    this.getRated = JSON.parse(this.getRated);
+
     this.filmData.getFilm().subscribe(ghibliData => {
       this.films = ghibliData.map(e => {
-        e.rating = '';
+
+        let test = this.getRated.filter(function(item) {
+         return item.id === e.id;
+        });
+        // let test = this.getRated.filter(rating => {
+        //   if(rating.id == e.id) {
+        //     return rating.rating;
+        //   }
+        //
+        // })
+
+        if(test) {
+          e.rating = test;
+          console.log(test);
+        }else {
+          e.rating = '';
+        }
+
         return e;
       })
     })
