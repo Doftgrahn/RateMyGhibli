@@ -1,5 +1,12 @@
 <section class="rate">
   <div class="rate__wrapper">
+
+    <h1>Rate your movie!</h1>
+
+    <p *ngIf="!ratingClicked">Click on the stars to start rating!</p>
+
+    <p *ngIf="ratingClicked">The movie {{itemIdRatingClicked}} has been given {{ratingClicked}} stars</p>
+
     <div class="filter__container">
 
       <label for="search">Filter</label>
@@ -7,16 +14,11 @@
     </div>
 
     <div class="rate__container"
-    (click)="toggleClass(i)"
-    [ngClass]="{'active': selectedIndex == i}"
     *ngFor="let ghibli of films | Moviefilter: searchText; let i of index">
 
       <span class="rate__container__info">{{ghibli.title}}</span>
       <app-stars [rating]="ghibli.rating" [id]="ghibli.id" (ratingClick)="ratingComponentClick($event)"></app-stars>
     </div>
-
-    <p *ngIf="!ratingClicked">Rate your movie!</p>
-    <p *ngIf="ratingClicked">The movie {{itemIdRatingClicked}} has been given {{ratingClicked}} stars</p>
 
   </div>
 </section>

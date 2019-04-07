@@ -40,20 +40,15 @@ export class RateComponent implements OnInit {
     this.getRated = localStorage.getItem('rating');
     this.parsedItems = JSON.parse(this.getRated);
 
-    let filterRating = (fil: any, e: any) => {
-      return fil.rating === e.rating
-    }
-    let filterId = (fil: any, e: any) => {
-      return fil.id === e.rating
-    }
-
     this.filmData.getFilm().subscribe(ghibliData => {
       this.films = ghibliData.map(e => {
-        e.rating = '';
-        if (!e.rating && !e.id && this.state.rating !== null) {
-          e.rating = this.parsedItems.filter(filterRating);
-          e.id = this.parsedItems.filter(filterId)
-        }
+
+        let oldRating = this.parsedItems.find(function(item: any) {
+          return item.id === e.id;
+        });
+
+        oldRating ? e.rating = oldRating.rating : e.rating = '';
+
         return e;
       })
     })
@@ -61,7 +56,5 @@ export class RateComponent implements OnInit {
 
   constructor(private filmData: FilmsService) { }
 
-  toggleClass(index: number) {          // get index
-    this.selectedIndex = index;
-  }
+
 }
