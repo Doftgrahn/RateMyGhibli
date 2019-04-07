@@ -1,33 +1,96 @@
 @import '../../shared/variables';
 
-@media(max-width: 800px){
+
+// The scss for the webb starts here
+.contaner{
+  background-image: url("https://static.boredpanda.com/blog/wp-content/uploads/2016/06/download-free-studio-ghibli-wallpapers-miyazaki-anime-44-57615b19e20b0__880.jpg");
+  padding: 20px;
+  min-height: 70vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
 
 .wrapper{
-  // background-image: url("https://wallpaperaccess.com/full/847949.png");
   display: flex;
   flex-direction: row;
-
-  padding: 20px;
+  height: 300px;
 }
-
 main > div{
-  margin: 20px;
-  margin-top: 100px;
-  margin-left: 40px;
-  width: 300px;
-  height: 150px;
+  display: inline-grid;
+  margin: 50px;
+  margin-left: 85px;
 }
 
-div > p{
-  text-align: center;
+p{
+  margin-left: 26px;
+  font-size: 20px;
   letter-spacing: 2px;
   color: $color-black;
 }
-.pPic{
- border: inset 1px $color-white;
+.kampisName{
+margin-left: -25px;
+}
+main div > img{
  width: 145px;
  border-radius: 100%;
  height: 150px;
- margin-left: 74px;
+ margin-top: 50px;
+ margin-left: 25px;
 }
+
+
+.linkHolder a > .gMail{
+  width: 50px;
+  height: 50px;
+  margin-bottom: 7px;
+  margin-left: 13px;
 }
+
+.linkHolder a > img{
+  width: 65px;
+  height: 65px;
+}
+
+
+
+
+
+// The scss for the mobil starts here
+@media(max-width: 600px){
+
+.contaner{
+  background-image: url("https://static.boredpanda.com/blog/wp-content/uploads/2016/06/download-free-studio-ghibli-wallpapers-miyazaki-anime-44-57615b19e20b0__880.jpg");
+  padding: 20px;
+   min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main > div{
+   margin-left: 65px;
+}
+
+ p{
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: $color-black;
+}
+.kampisName{
+  padding-left: 40px;
+  text-align: center;
+}
+main div > img{
+ border-radius: 100%;
+}
+
+
+.linkHolder a > .gMail{
+  width: 50px;
+  height: 50px;
+  margin-top:10px;
+
+}
+
+}
+// And the scss for the mobil ends here
