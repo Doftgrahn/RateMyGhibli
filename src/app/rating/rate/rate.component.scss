@@ -30,6 +30,7 @@
       label {
         margin-top: 10px;
         padding: 20px;
+        cursor: pointer;
       }
 
       input {
@@ -58,10 +59,8 @@
       align-items: center;
       border: 1px solid $color-red;
       flex-wrap: nowrap;
+      cursor: pointer;
 
-      &:hover {
-        background-color: $color-white;
-      }
 
       &__info {
         cursor: pointer;
@@ -75,4 +74,8 @@
       }
     }
   }
+}
+
+.active {
+  background-color:$color-red;
 }

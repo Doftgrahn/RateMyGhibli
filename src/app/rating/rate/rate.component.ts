@@ -9,10 +9,12 @@ import { Film } from '../../shared/film';
 })
 
 export class RateComponent implements OnInit {
+  selectedIndex: number;
   searchText: Film[];       /*For Search*/
   films: Film[] = [];      /*Get Film*/
   ratingClicked: Film[];
   itemIdRatingClicked: string;
+
   state: any = {
     rated: []
   };
@@ -21,20 +23,12 @@ export class RateComponent implements OnInit {
   showRatedinDom() {
     if (this.getRated !== null) {
       this.state.rated = JSON.parse(this.getRated)
-      this.films = this.state.rated
-    }
-  }
-
-  constructor(private filmData: FilmsService) { }
-
-  ngOnInit() {
-    this.filmData.getFilm().subscribe(ghibliData => {
-      this.films = ghibliData.map(e => {
-        e.rating = '';
+      this.films.map(e => {
+        e.id = this.state.rated.id;
+        e.rating = this.state.rated.rating;
         return e;
       })
-    })
-    this.showRatedinDom()
+    }
   }
 
   ratingComponentClick(clickObj: any): void {
@@ -49,5 +43,23 @@ export class RateComponent implements OnInit {
       rating: clickObj.rating
     })
     localStorage.setItem('Rating', JSON.stringify(this.state.rated));
+  }
+
+
+
+  ngOnInit() {
+    this.showRatedinDom();
+    this.filmData.getFilm().subscribe(ghibliData => {
+      this.films = ghibliData.map(e => {
+        e.rating = '';
+        return e;
+      })
+    })
+  }
+
+  constructor(private filmData: FilmsService) { }
+
+  toggleClass(index: number) {          // get index
+    this.selectedIndex = index;
   }
 }
