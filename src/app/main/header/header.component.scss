@@ -1,25 +1,38 @@
 @import '../../shared/variables';
 
 header {
+  overflow: hidden;
   display: flex;
   align-items: center;
   flex-direction: row;
-  justify-content: space-between;
   width: 100%;
   height: 80px;
   padding: 10px;
-  background-color: $color-turqiose;
+  background-color: #7cb6c1;
   @media screen and (min-width: 800px) {
     height: 100px;
   }
 
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+
   h1 {
+    font-size: 26px;
+    margin-left: 10px;
     font-weight: 800;
-    font-size: 25px;
-    display: block;
+    color: $color-white;
+    text-transform: uppercase;
+    white-space: nowrap;
+    @media screen and (min-width: 800px) {
+      font-size: 36px;
+    }
   }
 
   .hamburger__container {
+    margin-left: auto;
+    overflow: hidden;
     position: relative;
     z-index: 100;
     right: 0;
@@ -43,7 +56,7 @@ header {
       height: 4px;
       margin-bottom: 8px;
       transition: 0.5s;
-      background-color: $color-black;
+      background-color: $color-white;
       @media screen and (min-width: 800px) {
         display: none;
       }
@@ -79,8 +92,10 @@ header {
   }
 
   .hamburger__meny {
-    position: absolute;
+    position: fixed;
+    overflow: hidden;
     z-index: 10;
+    margin: 0;
     top: 0;
     right: 100%;
     display: flex;
@@ -88,36 +103,38 @@ header {
     height: 100vh;
     padding: 80px 20px 50px;
     transition: 0.5s;
-    background-color: $color-green;
+    background-color: $color-turqiose;
     @media screen and (min-width: 800px) {
       position: static;
       width: auto;
       height: auto;
       padding: 0;
-      background-color: inherit;
+      background: none;
+      margin-left: auto;
     }
 
     ul {
       font-size: 26px;
       font-weight: 800;
-      padding: $regular-spacing;
       list-style-type: none;
       @media screen and (min-width: 800px) {
         display: inline-flex;
-        margin: 0;
         font-size: 1.4em;
+        margin-right: 20px;
       }
 
       li {
         margin-top: 20px;
         @media screen and (min-width: 800px) {
-          margin-left: 20px;
+          margin-left: 24px;
+          margin-top: 0;
         }
 
         a {
+          transition: 0.3s;
           outline: none;
           text-decoration: none;
-          color: $color-black;
+          color: $color-white;
 
           &:hover {
             color: $color-blue;
@@ -128,6 +145,10 @@ header {
   }
 
   .hamburger__active {
+    position: fixed;
     right: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
   }
 }

@@ -1,7 +1,9 @@
 <div class="container">
+
   <h2> Top 5 Ghibli movies </h2>
-  
-  <div class="outsideFilmContainer" *ngFor="let film of films; let img of pictures; let i = index"> 
+
+
+  <div class="outsideFilmContainer" *ngFor="let film of films; let img of pictures; let i = index">
     <span class="rating"> #{{ [i+1]}}</span>
 
     <div class="filmContainer">
@@ -14,5 +16,7 @@
       </div>
     </div>
   </div>
+
+
 
 </div>

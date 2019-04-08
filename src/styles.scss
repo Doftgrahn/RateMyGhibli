@@ -3,17 +3,18 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import './app/shared/variables';
 
-
 * {
   box-sizing: border-box;
 }
-
 
 html {
   background-color: $color-white;
 }
 
-body{
+
+
+body {
+  height: 100%;
   margin: 0;
 }
 
@@ -23,7 +24,7 @@ h2,
 h3,
 h4 {
   color: $color-black;
-  font-weight: 800;
+  font-weight: bold;
   font-family: 'Roboto', sans-serif;
 }
 

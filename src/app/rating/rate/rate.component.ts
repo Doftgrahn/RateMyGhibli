@@ -19,18 +19,25 @@ export class RateComponent implements OnInit {
   itemIdRatingClicked: string;
 
   state = {
-    rated: null
+    rated: []
   };
 
+  topList(ghibli: any) {
+    ghibli.sort((a: any, b: any) => b.rating - a.rating)
+  }
 
-  ratingComponentClick(clickObj: any) {
+  sortName(ghibli: any) {
+    ghibli.sort((a: any, b: any) => a.rating - b.rating)
+  }
+
+  ratingComponentClick(clickObj: any): void {
     const item = this.films.find(((i: any) => i.id === clickObj.id));
     if (!!item) {
-      // There is a Ghibli movie with this id (this.films)
       item.rating = clickObj.rating;
       this.ratingClicked = clickObj.rating;
       this.itemIdRatingClicked = item.title;
     }
+
     if (this.state.rated.find(rating => rating.id === clickObj.id)) {
       this.state.rated.forEach(r => {
         if (r.id === clickObj.id) {
@@ -38,7 +45,6 @@ export class RateComponent implements OnInit {
         }
       })
     } else {
-      // There is no rating for clickObj.id  (this.state.rated)
       this.state.rated.push({
         id: clickObj.id,
         rating: clickObj.rating
@@ -70,7 +76,6 @@ export class RateComponent implements OnInit {
   setupLocalStorage() {
     localStorage.setItem('rating', JSON.stringify(this.state.rated))
   }
-
 
   constructor(private filmData: FilmsService) { }
 
