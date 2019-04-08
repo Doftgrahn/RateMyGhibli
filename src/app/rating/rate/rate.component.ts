@@ -22,6 +22,14 @@ export class RateComponent implements OnInit {
     rated: [null]
   };
 
+  topList(ghibli: any) {
+    ghibli.sort((a: any, b: any) => b.rating - a.rating)
+  }
+
+  sortName(ghibli: any) {
+    ghibli.sort((a: any, b: any) => a.rating - b.rating)
+  }
+
   ratingComponentClick(clickObj: any): void {
     const item = this.films.find(((i: any) => i.id === clickObj.id));
     if (!!item) {
