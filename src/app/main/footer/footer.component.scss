@@ -1,12 +1,11 @@
 @import '../../shared/variables';
-<<<<<<< HEAD
 
 footer {
   background-color: $color-turqiose;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #2d9b8e;
+  background-color: #7cb6c1;
   width: 100%;
   bottom: 0;
   left: 0;
@@ -27,7 +26,8 @@ footer {
   padding: 20px;
   text-align: center;
   p {
-    color: white;
+    color: $color-white;
+    font-weight: bold;
   }
   img {
     width: 200px;
@@ -39,10 +39,8 @@ footer {
 }
 .map {
   h2 {
-    color: white;
+    color: $color-white;
     padding-top: 0px;
     margin: 0px;
   }
 }
-=======
->>>>>>> db9adfcfdcbb1193b73e1dd42516ea3ca8600fad
