@@ -1,0 +1,11 @@
+@import '../../../shared/variables';
+@import "../../../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+.userComment {
+  text-align: center;
+  padding: 3em;
+}
+
+.commentText {
+  margin: 2em;
+}
