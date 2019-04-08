@@ -19,11 +19,11 @@ export class RateComponent implements OnInit {
   itemIdRatingClicked: string;
 
   state = {
-    rated: null
+    rated: [null]
   };
 
 
-  ratingComponentClick(clickObj: any) {
+  ratingComponentClick(clickObj: any): void {
     const item = this.films.find(((i: any) => i.id === clickObj.id));
     if (!!item) {
       // There is a Ghibli movie with this id (this.films)
@@ -31,6 +31,7 @@ export class RateComponent implements OnInit {
       this.ratingClicked = clickObj.rating;
       this.itemIdRatingClicked = item.title;
     }
+
     if (this.state.rated.find(rating => rating.id === clickObj.id)) {
       this.state.rated.forEach(r => {
         if (r.id === clickObj.id) {
