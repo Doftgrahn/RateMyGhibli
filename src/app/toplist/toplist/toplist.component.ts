@@ -23,7 +23,7 @@ export class ToplistComponent implements OnInit {
   }
 
 
-  pictures = ['assets/pics/Only-Yesterday.jpg',
+  pictures = ['assets/pics/porco-rosso.jpg',
     'assets/pics/The-tale-of-princess-kaguya.jpg',
     'assets/pics/Grave-of-the-Fireflies.jpg',
     'assets/pics/Spirited-Away.jpg',
