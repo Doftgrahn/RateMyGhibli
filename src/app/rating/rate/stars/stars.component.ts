@@ -25,4 +25,8 @@ export class StarsComponent implements OnInit {
     })
   }
 
+  resetRating() {
+    this.onClick(null);
+  }
+
 }
