@@ -6,14 +6,13 @@ import { Component, OnInit, Input, Output } from '@angular/core';
   styleUrls: ['./show-review.component.scss']
 })
 export class ShowReviewComponent implements OnInit {
-  @Input() reviewInfo: object = {
-    title: '',
-    year: '',
-    comment: '',
-    username: ''
+  @Input() reviewInfo;
+
+  listOfComments = {
+    comments: []
   };
 
-  //let comment = JSON.parse(localStorage.getItem(this.reviewInfo));
+
 
   constructor() { }
 

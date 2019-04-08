@@ -7,7 +7,7 @@ import { FormControl, Validators, AbstractControl, FormGroup, FormBuilder } from
   styleUrls: ['./add-review.component.scss']
 })
 export class AddReviewComponent implements OnInit {
-  formContent: object = {
+  formContent: any = {
     title: '',
     year: '',
     comment: '',
@@ -44,7 +44,7 @@ export class AddReviewComponent implements OnInit {
     this.commentFieldControl = this.reviewForm.controls['commentFieldControl'];
     this.usersNameControl = this.reviewForm.controls['usersNameControl'];
 
-    this.reviewFormform = this.formBuilder.group({
+    this.reviewForm = this.formBuilder.group({
       movieTitleControl: [null, [Validators.required, Validators.minLength(2)]],
       releaseYearControl: [null, [Validators.required, Validators.minLength(4), Validators.maxLength(4)]],
       commentFieldControl: [null,[Validators.required]],
@@ -52,7 +52,7 @@ export class AddReviewComponent implements OnInit {
     });
   }
 
-  isNumber(x: string) {
+  isNumber(x: any) {
      let regex = /^[0-9]+$/;
      if (!x.value.trim().match(regex)) {
        return { isNumber: true };
