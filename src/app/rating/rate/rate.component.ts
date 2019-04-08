@@ -19,7 +19,7 @@ export class RateComponent implements OnInit {
   itemIdRatingClicked: string;
 
   state = {
-    rated: [null]
+    rated: []
   };
 
 
