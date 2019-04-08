@@ -18,7 +18,7 @@ export class HomepageComponent implements OnInit {
       {name: 'assets/pics/Princess-Mononoke.jpg'},
       {name: 'assets/pics/the-wind-rises.jpg'},
       {name: 'assets/pics/The-tale-of-princess-kaguya.jpg'},
-      {name: 'assets/pics/Grave-of-the-Fireflies.jpg'},
+      {name: 'assets/pics/Whisper-of-the-Heart.jpg'},
       {name: 'assets/pics/Spirited-Away.jpg'},
       {name: 'assets/pics/Kikis-Delivery-Service.jpg'}
     ];

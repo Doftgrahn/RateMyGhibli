@@ -10,13 +10,14 @@
   background-size: cover;
   background-attachment: fixed;
   background-position: bottom;
-
+  justify-content: center;
 }
 
 .wrapper{
   display: flex;
   flex-direction: row;
   height: 300px;
+  justify-content: center;
 }
 main > div{
   display: inline-grid;
@@ -59,7 +60,7 @@ main div > img{
 
 
 // The scss for the mobil starts here
-@media(max-width: 600px){
+@media(max-width: 800px){
 
 .contaner{
   background-image: url("https://static.boredpanda.com/blog/wp-content/uploads/2016/06/download-free-studio-ghibli-wallpapers-miyazaki-anime-44-57615b19e20b0__880.jpg");

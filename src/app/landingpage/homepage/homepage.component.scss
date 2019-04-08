@@ -1,11 +1,96 @@
-.container{
+@import '../../shared/variables';
+#container{
   width: 100%;
-  margin: 5em auto;
-  padding: 0;
-  height: 800px;
+  margin:auto;
+  justify-content: center;
+  background-image: url("https://static.boredpanda.com/blog/wp-content/uploads/2016/06/download-free-studio-ghibli-wallpapers-miyazaki-anime-44-57615b19e20b0__880.jpg");
+  min-height: 70vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: bottom;
 }
 
+
+.items :hover{
+  transform: scale(1.2);
+}
 .items{
-  max-width: 300px;
-  height: 300px;
+  margin: 50px;
+}
+
+.carousel{
+  height: 400px;
+  width: 300px;
+}
+.info{
+  height: 170px;
+  background-color: $color-white;
+  letter-spacing: 2px;
+  text-align: center;
+
+}
+
+
+#left:hover{
+    transform: scale(1.7);
+
+}
+
+#right:hover{
+transform: scale(1.7);
+}
+h1{
+  color: $color-red;
+}
+
+.callToArms{
+  color: $color-white;
+  border-radius: 5px 5px;
+  height: 50px;
+  width: 200px;
+  margin: 10px;
+  font-size: 18px;
+  background-color: $color-red;
+}
+
+.bigDaydyPicWrapper{
+  // background-color: $color-gray;
+}
+.picWraper{
+  justify-content: center;
+  display: inline-block;
+  margin:40px;
+}
+.picWraper > img{
+  margin: 20px;
+  height: 350px;
+  width: 230px;
+}
+
+@media(max-width: 800px){
+
+.items{
+  width: 650px;
+  height: auto;
+}
+
+.carousel{
+  height: 400px;
+  width: 273px;
+}
+
+
+#left:hover{
+  transform: scale(.8);
+
+}
+
+#right:hover{
+transform: scale(.8);
+}
+
+.info{
+  height: 350px;
+}
 }

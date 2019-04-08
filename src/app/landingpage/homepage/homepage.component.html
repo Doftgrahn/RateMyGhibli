@@ -3,7 +3,7 @@
       ng2-carouselamos
       class="slides-wrapper"
       [items]="items"
-      [width]="900"
+      [width]="1250"
       [$prev]="prev"
       [$next]="next"
       [$item]="item"
@@ -11,20 +11,45 @@
     </div>
 
 
-  <ng-template #prev>
-    <img src="assets/home_page/left-arrow.png" id="left" />
-  </ng-template>
-  <ng-template #next>
-    <img src="assets/home_page/right-arrow.png" id="right" />
-  </ng-template>
-  <ng-template #item let-item let-i="index">
-
+<ng-template #prev>
+  <img src="assets/home_page/left-arrow.png" id="left" />
+</ng-template>
+    <ng-template #item let-item let-i="index">
       <div class="items">
-        <img src="{{ item.name }}">
+        <img class="carousel" src="{{ item.name }}">
       </div>
-
   </ng-template>
+<ng-template #next>
+  <img src="assets/home_page/right-arrow.png" id="right" />
+</ng-template>
 
-<div class="">
-  hej
+
+<div class="info">
+<button class="callToArms">Click here to checkout more movie</button>
+<br>
+  The name Ghibli was given by Hayao Miyazaki from the Italian noun ghibli,<br>
+   based on the Libyan-Arabic name for the hot desert wind of that country, the idea being the studio would <br>
+   "blow a new wind through the anime industry". It also refers to an Italian aircraft, the Caproni Ca.309 Ghibli.<br>
+    Although the Italian word is more accurately transliterated as ギブリ (Giburi),
+    the Japanese name of the studio is ジブリ (Jiburi).
+</div>
+<div class="bigDaydyPicWrapper">
+
+<div class="picWraper">
+<img src="assets/pics/Howls-Moving-Castle.jpg" alt="404">
+<img src="assets/pics/The-tale-of-princess-kaguya.jpg" alt="404">
+<img src="assets/pics/Grave-of-the-Fireflies.jpg" alt="404">
+<img src="assets/pics/Spirited-Away.jpg" alt="404">
+<img src="assets/pics/Kikis-Delivery-Service.jpg" alt="404">
+<img src="assets/pics/Castle-in-the-Sky.jpg" alt="404">
+<img src="assets/pics/ariety.jpg" alt="404">
+<img src="assets/pics/porco-rosso.jpg" alt="404">
+<img src="assets/pics/My-Neighbor-Totoro.jpg" alt="404">
+<img src="assets/pics/Princess-Mononoke.jpg" alt="404">
+<img src="assets/pics/the-wind-rises.jpg" alt="404">
+<img src="assets/pics/When-Marnie-Was-There.jpg" alt="404">
+<img src="assets/pics/Whisper-of-the-Heart.jpg" alt="404">
+<img src="assets/pics/My-Neighbors-the-Yamadas.jpeg" alt="404">
+<img src="assets/pics/Tales-from-Earthsea.jpg" alt="404">
+</div>
 </div>
