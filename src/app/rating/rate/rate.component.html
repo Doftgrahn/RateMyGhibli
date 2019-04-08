@@ -10,12 +10,15 @@
 
       <label for="search">Filter</label>
       <input id="search" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search!" />
-      <button class="topList" (click)="topList()">Sort</button>
+      <span>Sort</span>
+      <button class="topList" (click)="topList(films)">Ascending</button>
+      <button class="topList desc" (click)="sortName(films)">Descending</button>
+
     </div>
 
     <div class="rate__container" *ngFor="let ghibli of films | Moviefilter: searchText">
 
-      <span class="rate__container__info">{{ghibli.title}}</span>
+      <p class="rate__container__info">{{ghibli.title}}</p>
       <app-stars [rating]="ghibli.rating" [id]="ghibli.id" (ratingClick)="ratingComponentClick($event)"></app-stars>
 
     </div>
