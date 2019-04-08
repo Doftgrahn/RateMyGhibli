@@ -22,10 +22,17 @@ export class RateComponent implements OnInit {
     rated: []
   };
 
+  topList(ghibli: any) {
+    ghibli.sort((a: any, b: any) => b.rating - a.rating)
+  }
+
+  sortName(ghibli: any) {
+    ghibli.sort((a: any, b: any) => a.rating - b.rating)
+  }
+
   ratingComponentClick(clickObj: any): void {
     const item = this.films.find(((i: any) => i.id === clickObj.id));
     if (!!item) {
-      // There is a Ghibli movie with this id (this.films)
       item.rating = clickObj.rating;
       this.ratingClicked = clickObj.rating;
       this.itemIdRatingClicked = item.title;
@@ -38,7 +45,6 @@ export class RateComponent implements OnInit {
         }
       })
     } else {
-      // There is no rating for clickObj.id  (this.state.rated)
       this.state.rated.push({
         id: clickObj.id,
         rating: clickObj.rating

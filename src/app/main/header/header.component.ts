@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  logo: string = 'assets/pics/logo.png';
   toggle: boolean = false;
 
   hamburger() {
@@ -18,11 +19,6 @@ export class HeaderComponent implements OnInit {
     this.toggle = false;
   }
 
-
-
-
-
-  constructor() { }
 
   ngOnInit() {
   }
