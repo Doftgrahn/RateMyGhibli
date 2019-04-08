@@ -1,5 +1,4 @@
 @import '../../shared/variables';
-<<<<<<< HEAD
 
 footer {
   background-color: $color-turqiose;
@@ -15,8 +14,8 @@ footer {
 }
 
 .footerContacts {
-  @media (min-width: 1025px)  {
-    display: flex; 
+  @media (min-width: 1025px) {
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     flex: 1 1;
@@ -26,23 +25,23 @@ footer {
 .info {
   padding: 20px;
   text-align: center;
+
   p {
     color: white;
   }
+
   img {
     width: 200px;
   }
-
-  @media (min-width: 1025px)  {
+  @media (min-width: 1025px) {
     text-align: left;
   }
 }
+
 .map {
   h2 {
     color: white;
-    padding-top: 0px;
-    margin: 0px;
+    padding-top: 0;
+    margin: 0;
   }
 }
-=======
->>>>>>> db9adfcfdcbb1193b73e1dd42516ea3ca8600fad

@@ -1,32 +1,25 @@
-
 <div class="container">
 
   <h2> Top 5 Ghibli movies </h2>
-<<<<<<< HEAD
-  
+
   <div class="wrapper">
-  
-  <div class="outsideFilmContainer" *ngFor="let film of films; let img of pictures; let i = index"> 
-=======
 
+    <div class="outsideFilmContainer" *ngFor="let film of films; let img of pictures; let i = index">
 
-  <div class="outsideFilmContainer" *ngFor="let film of films; let img of pictures; let i = index">
->>>>>>> db9adfcfdcbb1193b73e1dd42516ea3ca8600fad
-    <span class="rating"> #{{ [i+1]}}</span>
+      <span class="rating"> #{{ [i+1]}}</span>
 
-    <div class="filmContainer">
-      <img src="{{ pictures[i] }}">
-      <div class="aboutFilm">
-        <p> 🍅 <span class="bold">{{ films[i].rt_score }}/ 100% </span> </p>
-        <p> <span class="bold"> {{ films[i].title | uppercase}} ({{ films[i].release_date}})</span> </p>
-        <p> <span class="bold">Synopsis:</span> {{ films[i].description }}</p>
-        <p> <span class="bold">Directed by:</span> {{ films[i].director }} </p>
+      <div class="filmContainer">
+        <img src="{{ pictures[i] }}">
+        <div class="aboutFilm">
+          <p> 🍅 <span class="bold">{{ films[i].rt_score }}/ 100% </span> </p>
+          <p> <span class="bold"> {{ films[i].title | uppercase}} ({{ films[i].release_date}})</span> </p>
+          <p> <span class="bold">Synopsis:</span> {{ films[i].description }}</p>
+          <p> <span class="bold">Directed by:</span> {{ films[i].director }} </p>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 
 
 </div>
-
