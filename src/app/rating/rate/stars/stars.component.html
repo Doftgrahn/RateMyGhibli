@@ -1,6 +1,6 @@
 <div class="rating">
 
-  <button (click)="resetRating()">Clear</button>
+  <button class="clearRating" (click)="resetRating()">Clear</button>
 
   <input type="radio" [name]="inputName" value="5" [checked]="rating===5" />
   <label title="Rocks!" (click)='onClick(5)'>5 stars</label>
