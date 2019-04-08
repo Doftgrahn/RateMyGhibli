@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  height: 100%;
+  min-height: 100%;
   margin: 0;
 }
 
@@ -21,7 +21,7 @@ h2,
 h3,
 h4 {
   color: $color-black;
-  font-weight: 800;
+  font-weight: bold;
   font-family: 'Roboto', sans-serif;
 }
 
