@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
-import { FormControl, Validators, AbstractControl, FormGroup } from '@angular/forms';
+import { FormControl, Validators, AbstractControl, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-add-review',
@@ -28,21 +28,28 @@ export class AddReviewComponent implements OnInit {
 
 
   showWhatUserWrote() {
-    console.log(this.movieTitleControl.value);
-    this.formContent.title = this.movieTitleControl.value;
+    this.formContent.title = this.movieTitleControl.value,
     this.formContent.year = this.releaseYearControl.value,
     this.formContent.comment =  this.commentFieldControl.value,
-    this.formContent.username = this.usersNameControl.value
+    this.formContent.username = this.usersNameControl.value,
+    localStorage.setItem(this.formContent, JSON.stringify(this.formContent));
   }
 
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.movieTitleControl = this.reviewForm.controls['movieTitleControl'];
 		this.releaseYearControl = this.reviewForm.controls['releaseYearControl'];
     this.commentFieldControl = this.reviewForm.controls['commentFieldControl'];
     this.usersNameControl = this.reviewForm.controls['usersNameControl'];
+
+    this.reviewFormform = this.formBuilder.group({
+      movieTitleControl: [null, [Validators.required, Validators.minLength(2)]],
+      releaseYearControl: [null, [Validators.required, Validators.minLength(4), Validators.maxLength(4)]],
+      commentFieldControl: [null,[Validators.required]],
+      usersNameControl: [null,[Validators.required]]
+    });
   }
 
   isNumber(x: string) {

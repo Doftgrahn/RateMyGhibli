@@ -4,7 +4,7 @@
 
   <div class="formular">
     <label>Movie title *</label>
-    <input type="text" placeholder="Leon"
+    <input type="text"
     [formControl]="movieTitleControl"
 		[class.invalid]="movieTitleControl.invalid && (movieTitleControl.touched || movieTitleControl.dirty)"
 		[class.valid]="movieTitleControl.valid && (movieTitleControl.touched || movieTitleControl.dirty)"/>
@@ -17,7 +17,7 @@
 
   <div class="formular">
     <label>Year of release *</label>
-    <input type="text" placeholder="1994"
+    <input type="text"
     [formControl]="releaseYearControl"
 		[class.invalid]="releaseYearControl.invalid && (releaseYearControl.touched || releaseYearControl.dirty)"
 		[class.valid]="releaseYearControl.valid && (releaseYearControl.touched || releaseYearControl.dirty)"/>
@@ -47,18 +47,17 @@
   </div>
 
   <div class="formular">
-    <label>Your name</label>
-    <input type="text" placeholder="John"
+    <label>Your name*</label>
+    <input type="text"
     [formControl]="usersNameControl"
    [class.invalid]="usersNameControl.invalid && (usersNameControl.touched || usersNameControl.dirty)"
    [class.valid]="usersNameControl.valid && (usersNameControl.touched || usersNameControl.dirty)"/><br/>
    <div class="errorMessage" *ngIf="usersNameControl.errors?.required && (usersNameControl.touched || usersNameControl.dirty)">
      Name can't be empty
    </div>
-    <!--<input type="checkbox" id="checkbox" (click)="disable = true"/>I want to remain incognito-->
   </div>
 
-  <button class="btn" (click)="showWhatUserWrote()">Send</button>
+  <button class="btn" (click)="showWhatUserWrote()" [disabled]="!reviewForm.valid">Send</button>
   <p class="formular">* required fields</p>
 
   <app-show-review [reviewInfo]="formContent"></app-show-review>

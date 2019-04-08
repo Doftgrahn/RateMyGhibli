@@ -13,6 +13,8 @@ export class ShowReviewComponent implements OnInit {
     username: ''
   };
 
+  //let comment = JSON.parse(localStorage.getItem(this.reviewInfo));
+
   constructor() { }
 
   ngOnInit() {
