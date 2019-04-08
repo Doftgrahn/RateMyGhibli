@@ -1,0 +1,66 @@
+@import '../../../shared/variables';
+
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  outline: none;
+}
+
+.rating:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+  clip: rect(0,0,0,0);
+  outline: none;
+}
+
+.rating:not(:checked) > label {
+  max-width: 1em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 200%;
+  color: $color-gray;
+  outline: none;
+}
+
+.rating:not(:checked) > label:before {
+  content: '★ ';
+}
+
+.rating > input:checked ~ label {
+  color: #f70;
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+  color: gold;
+}
+
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+  color: #ea0;
+}
+
+.clearRating {
+  display: inline-block;
+  margin-left: auto;
+  background-color: $color-light-red;
+  padding: 5px 10px;
+  margin-left: 14px;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: $color-white;
+
+  &:hover {
+    background-color: $color-blue;
+  }
+}

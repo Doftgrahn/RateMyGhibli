@@ -1,19 +1,22 @@
 <div class="container">
-  <h2> Top list of Ghibli movies </h2>
 
-  <button (click)="getShorterList()">Shorter list?</button>
-  
-  <div class="outsideFilmContainer" *ngFor="let film of films; let img of pictures; let i = index"> 
-    <span> {{ [i+1]}}</span>
-     
+  <h2> Top 5 Ghibli movies </h2>
+
+
+  <div class="outsideFilmContainer" *ngFor="let film of films; let img of pictures; let i = index">
+    <span class="rating"> #{{ [i+1]}}</span>
 
     <div class="filmContainer">
       <img src="{{ pictures[i] }}">
-      <p> Rotted tomatoes rating: {{ films[i].rt_score }} </p>
-      <p> Title: {{ films[i].title }} </p>
-      <p>  Directed by: {{ films[i].director }} </p>
-      <p> {{ films[i].description }}</p>
+      <div class="aboutFilm">
+        <p> 🍅 <span class="bold">{{ films[i].rt_score }}/ 100% </span> </p>
+        <p> <span class="bold"> {{ films[i].title | uppercase}} ({{ films[i].release_date}})</span> </p>
+        <p> <span class="bold">Synopsis:</span> {{ films[i].description }}</p>
+        <p> <span class="bold">Directed by:</span> {{ films[i].director }} </p>
+      </div>
     </div>
   </div>
+
+
 
 </div>

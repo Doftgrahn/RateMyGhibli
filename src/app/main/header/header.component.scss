@@ -1,6 +1,7 @@
 @import '../../shared/variables';
 
 header {
+  overflow: hidden;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -20,6 +21,7 @@ header {
   }
 
   .hamburger__container {
+    overflow: hidden;
     position: relative;
     z-index: 100;
     right: 0;
@@ -79,8 +81,10 @@ header {
   }
 
   .hamburger__meny {
-    position: absolute;
+    position: fixed;
+    overflow: hidden;
     z-index: 10;
+    margin: 0;
     top: 0;
     right: 100%;
     display: flex;
@@ -128,6 +132,10 @@ header {
   }
 
   .hamburger__active {
+    position: fixed;
     right: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
   }
 }
