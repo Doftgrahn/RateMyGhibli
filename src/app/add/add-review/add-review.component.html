@@ -1,8 +1,8 @@
 <h2>Leave a review!</h2>
 
-<div class="formular" [formGroup]="reviewForm">
+<div class="container" [formGroup]="reviewForm">
 
-  <div class="form">
+  <div class="formular">
     <label>Movie title *</label>
     <input type="text" placeholder="Leon"
     [formControl]="movieTitleControl"
@@ -15,7 +15,7 @@
   </div>
 
 
-  <div class="form">
+  <div class="formular">
     <label>Year of release *</label>
     <input type="text" placeholder="1994"
     [formControl]="releaseYearControl"
@@ -29,9 +29,13 @@
     <div class="errorMessage" *ngIf="releaseYearControl.errors?.isNumber && releaseYearControl.dirty">
       Year of release has to be numbers!
     </div>
+
+    <div class="errorMessage" *ngIf="(releaseYearControl.errors?.required || releaseYearControl.errors?.minlength || releaseYearControl.errors?.maxlength) && releaseYearControl.dirty">
+			Year of release can't be other than 4 symbols!
+		</div>
   </div>
 
-  <div class="form">
+  <div class="formular">
     <label>Your comment *</label>
     <textarea type="text" placeholder="Tell us what did you like about this movie" id="comments"
      [formControl]="commentFieldControl"
@@ -42,7 +46,7 @@
     </div>
   </div>
 
-  <div class="form">
+  <div class="formular">
     <label>Your name</label>
     <input type="text" placeholder="John"
     [formControl]="usersNameControl"
@@ -51,11 +55,11 @@
    <div class="errorMessage" *ngIf="usersNameControl.errors?.required && (usersNameControl.touched || usersNameControl.dirty)">
      Name can't be empty
    </div>
-    <input type="checkbox" id="checkbox" (click)="disable = true"/>I want to remain incognito
+    <!--<input type="checkbox" id="checkbox" (click)="disable = true"/>I want to remain incognito-->
   </div>
 
   <button class="btn" (click)="showWhatUserWrote()">Send</button>
-  <p>* required fields</p>
+  <p class="formular">* required fields</p>
 
   <app-show-review [reviewInfo]="formContent"></app-show-review>
 </div>

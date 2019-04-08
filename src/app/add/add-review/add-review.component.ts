@@ -16,7 +16,7 @@ export class AddReviewComponent implements OnInit {
 
   reviewForm: FormGroup = new FormGroup({
 		movieTitleControl: new FormControl('', [Validators.required, Validators.minLength(2)]),
-		releaseYearControl: new FormControl('', [Validators.required, this.isNumber]),
+		releaseYearControl: new FormControl('', [Validators.required, this.isNumber, Validators.minLength(4), Validators.maxLength(4)]),
     commentFieldControl: new FormControl('',[Validators.required]),
     usersNameControl: new FormControl('', [Validators.required])
 		}
@@ -34,6 +34,7 @@ export class AddReviewComponent implements OnInit {
     this.formContent.comment =  this.commentFieldControl.value,
     this.formContent.username = this.usersNameControl.value
   }
+
 
   constructor() { }
 

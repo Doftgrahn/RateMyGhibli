@@ -1,14 +1,24 @@
 @import '../../shared/variables';
 @import "../../../../node_modules/bootstrap/scss/bootstrap.scss";
 
+* {
+	font-family: montserrat;
+}
 
 label {
 	display: block;
-	margin-top: 2em;
+	margin-top: 0.5em;
+	font-family: montserrat;
 }
 
 .formular {
-  padding: 2em;
+  padding: 1em;
+
+}
+
+.container {
+	text-align: center;
+	padding: 3em;
 
 }
 
@@ -21,15 +31,20 @@ h2 {
 }
 
 input, textarea {
-  width: 30%;
+  width: 50%;
 }
 
-#checkbox {
+/*#checkbox {
   margin-top: 1em;
   text-align: left;
   width: auto;
-}
+}*/
 
 .errorMessage {
 	color: red;
+}
+
+.btn {
+	border: 1px solid blue;
+	margin: 1em;
 }
