@@ -1,7 +1,6 @@
 @import '../../shared/variables';
 
 header {
-  overflow: hidden;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -32,7 +31,6 @@ header {
 
   .hamburger__container {
     margin-left: auto;
-    overflow: hidden;
     position: relative;
     z-index: 100;
     right: 0;
@@ -51,7 +49,6 @@ header {
       position: relative;
       z-index: 10;
       display: block;
-      overflow: hidden;
       width: 34px;
       height: 4px;
       margin-bottom: 8px;
@@ -74,6 +71,17 @@ header {
       }
     }
 
+    &.active {
+      flex: 1;
+      margin-left: 0;
+      transition: 0.5s;
+      padding: 10px;
+      position: fixed;
+      @media screen and (min-width: 800px) {
+        position: relative;
+      }
+    }
+
     &.active span {
       &:nth-child(1) {
         left: 2px;
@@ -93,7 +101,6 @@ header {
 
   .hamburger__meny {
     position: fixed;
-    overflow: hidden;
     z-index: 10;
     margin: 0;
     top: 0;
@@ -103,7 +110,7 @@ header {
     height: 100vh;
     padding: 80px 20px 50px;
     transition: 0.5s;
-    background-color: $color-turqiose;
+    background-color: #7cb6c1;
     @media screen and (min-width: 800px) {
       position: static;
       width: auto;
@@ -145,10 +152,10 @@ header {
   }
 
   .hamburger__active {
+    transition: 0.5s;
     position: fixed;
     right: 0;
     height: 100%;
     width: 100%;
-    overflow: hidden;
   }
 }

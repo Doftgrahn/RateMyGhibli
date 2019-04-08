@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-/*--Pipe it up!--*/
+/*--Pipe it up! Woop woop!--*/
 import { Film } from '../shared/film';
 
 @Pipe({

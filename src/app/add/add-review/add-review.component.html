@@ -1,3 +1,64 @@
-<p>
-  add-review works!
-</p>
+<h2>Leave a review!</h2>
+
+<div class="container" [formGroup]="reviewForm">
+
+  <div class="formular">
+    <label>Movie title</label>
+    <input type="text"
+    [formControl]="movieTitleControl"
+		[class.invalid]="movieTitleControl.invalid && (movieTitleControl.touched || movieTitleControl.dirty)"
+		[class.valid]="movieTitleControl.valid && (movieTitleControl.touched || movieTitleControl.dirty)"/>
+
+    <div class="errorMessage" *ngIf="(movieTitleControl.errors?.required || movieTitleControl.errors?.minlength) && (movieTitleControl.touched || movieTitleControl.dirty)">
+			Movie title has to contain at least 2 symbols!
+		</div>
+  </div>
+
+
+  <div class="formular">
+    <label>Year of release</label>
+    <input type="text"
+    [formControl]="releaseYearControl"
+		[class.invalid]="releaseYearControl.invalid && (releaseYearControl.touched || releaseYearControl.dirty)"
+		[class.valid]="releaseYearControl.valid && (releaseYearControl.touched || releaseYearControl.dirty)"/>
+
+    <div class="errorMessage" *ngIf="releaseYearControl.errors?.required && (releaseYearControl.touched || releaseYearControl.dirty)">
+			Year of release can't be empty!
+		</div>
+
+    <div class="errorMessage" *ngIf="releaseYearControl.errors?.isNumber && releaseYearControl.dirty">
+      Year of release has to be numbers!
+    </div>
+
+    <div class="errorMessage" *ngIf="(releaseYearControl.errors?.required || releaseYearControl.errors?.minlength || releaseYearControl.errors?.maxlength) && releaseYearControl.dirty">
+			Year of release can't be other than 4 symbols!
+		</div>
+  </div>
+
+  <div class="formular">
+    <label>Your comment</label>
+    <textarea type="text" placeholder="Tell us what did you like about this movie" id="comments"
+     [formControl]="commentFieldControl"
+		[class.invalid]="commentFieldControl.invalid && (commentFieldControl.touched || commentFieldControl.dirty)"
+		[class.valid]="commentFieldControl.valid && (commentFieldControl.touched || commentFieldControl.dirty)"></textarea>
+    <div class="errorMessage" *ngIf="commentFieldControl.errors?.required && (commentFieldControl.touched || commentFieldControl.dirty)">
+      Comment field can't be empty
+    </div>
+  </div>
+
+  <div class="formular">
+    <label>Your name</label>
+    <input type="text"
+    [formControl]="usersNameControl"
+   [class.invalid]="usersNameControl.invalid && (usersNameControl.touched || usersNameControl.dirty)"
+   [class.valid]="usersNameControl.valid && (usersNameControl.touched || usersNameControl.dirty)"/><br/>
+   <div class="errorMessage" *ngIf="usersNameControl.errors?.required && (usersNameControl.touched || usersNameControl.dirty)">
+     Name can't be empty
+   </div>
+  </div>
+
+  <button class="btn" (click)="showWhatUserWrote()" [disabled]="!reviewForm.valid">Send</button>
+
+
+  <app-show-review [reviewInfo]="formContent"></app-show-review>
+</div>

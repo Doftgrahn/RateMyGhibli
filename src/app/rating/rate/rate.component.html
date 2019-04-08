@@ -1,9 +1,11 @@
 <section class="rate">
+
   <div class="rate__wrapper">
 
     <h1>Rate your movie!</h1>
 
     <p *ngIf="!ratingClicked">Click on the stars to start rating!</p>
+
     <p *ngIf="ratingClicked">The movie {{itemIdRatingClicked}} has been given {{ratingClicked}} stars</p>
 
     <div class="filter__container">
@@ -11,6 +13,7 @@
       <label for="search">Filter</label>
 
       <input id="search" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search!" />
+
       <span>Sort</span>
 
       <button class="topList" (click)="topList(films)">Ascending</button>
@@ -18,16 +21,13 @@
 
     </div>
 
+    <div class="loop__wrapper">
 
-<div class="loop__wrapper">
-
-    <div class="rate__container" *ngFor="let ghibli of films | Moviefilter: searchText">
-      <p class="rate__container__info">{{ghibli.title}}</p>
-      <app-stars [rating]="ghibli.rating" [id]="ghibli.id" (ratingClick)="ratingComponentClick($event)"></app-stars>
+      <div class="rate__container" *ngFor="let ghibli of films | Moviefilter: searchText">
+        <p class="rate__container__info">{{ghibli.title}}</p>
+        <app-stars [rating]="ghibli.rating" [id]="ghibli.id" (ratingClick)="ratingComponentClick($event)"></app-stars>
+      </div>
     </div>
-
-  </div>
-
 
   </div>
 </section>
