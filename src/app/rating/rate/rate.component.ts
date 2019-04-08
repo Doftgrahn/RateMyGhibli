@@ -22,7 +22,6 @@ export class RateComponent implements OnInit {
     rated: []
   };
 
-
   ratingComponentClick(clickObj: any): void {
     const item = this.films.find(((i: any) => i.id === clickObj.id));
     if (!!item) {
@@ -71,7 +70,6 @@ export class RateComponent implements OnInit {
   setupLocalStorage() {
     localStorage.setItem('rating', JSON.stringify(this.state.rated))
   }
-
 
   constructor(private filmData: FilmsService) { }
 
