@@ -21,7 +21,7 @@ export class RateComponent implements OnInit {
   parsedItems: any;
 
 
-  ratingComponentClick(clickObj: any): void {
+  ratingComponentClick(clickObj: any) {
     const item = this.films.find(((i: any) => i.id === clickObj.id));
     if (!!item) {
       item.rating = clickObj.rating;
@@ -35,21 +35,19 @@ export class RateComponent implements OnInit {
     localStorage.setItem('rating', JSON.stringify(this.state.rated));
   }
 
-
   ngOnInit() {
     this.getRated = localStorage.getItem('rating');
     this.parsedItems = JSON.parse(this.getRated);
 
     this.filmData.getFilm().subscribe(ghibliData => {
       this.films = ghibliData.map(e => {
-
-        let oldRating = this.parsedItems.find(function(item: any) {
-          return item.id === e.id;
-        });
-
-        oldRating ? e.rating = oldRating.rating : e.rating = '';
-
-        return e;
+        if (this.getRated !== null) {
+          let oldRating = this.parsedItems.find(function(item: any) {
+            return item.id === e.id;
+          });
+          oldRating ? e.rating = oldRating.rating : e.rating = '';
+          return e;
+        }
       })
     })
   }
