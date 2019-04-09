@@ -8,15 +8,12 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 export class ShowReviewComponent implements OnInit {
   @Input() reviewInfo;
 
-  listOfComments = {
-    comments: []
-  };
-
-
+  comments = [];
 
   constructor() { }
 
   ngOnInit() {
+    this.comments = JSON.parse(localStorage.getItem('comments')) || [];
   }
 
 
