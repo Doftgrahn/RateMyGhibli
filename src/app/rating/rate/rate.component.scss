@@ -103,8 +103,8 @@
       flex-wrap: wrap;
       cursor: pointer;
       transform-origin: left;
-      animation: 1s show alternate;
-      @keyframes show {
+      animation: 1s spin alternate;
+      @keyframes spin {
         0% {
           opacity: 0;
           transform: translateY(180deg);

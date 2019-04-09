@@ -1,29 +1,5 @@
 @import './shared/variables';
 
-:host {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
+/deep/ router-outlet ~ * {
   display: block;
-
-  main {
-    position: relative;
-    height: auto;
-  }
-
-  /deep/ router-outlet ~ * {
-    position: static;
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-
-  app-footer {
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    left: 0;
-    right: 0;
-  }
 }
