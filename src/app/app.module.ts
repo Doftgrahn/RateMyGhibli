@@ -21,6 +21,7 @@ Import Routing, DataService and pipe
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './shared/app-routing.module';
+import { FilmsService } from './shared/films.service';
 
 
 
@@ -39,7 +40,7 @@ import { AppRoutingModule } from './shared/app-routing.module';
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [FilmsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

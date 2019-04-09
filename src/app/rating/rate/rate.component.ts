@@ -4,6 +4,7 @@ import { FilmsService } from '../../shared/films.service'; /* Service */
 
 import { Film } from '../../shared/film';    /* Interfaces */
 import { Rate } from '../../shared/rate';
+import { State } from '../../shared/state';
 
 @Component({
   selector: 'app-rate',
@@ -18,28 +19,20 @@ export class RateComponent implements OnInit {
   ratingClicked: Film[];
   itemIdRatingClicked: string;
 
-  state = {
+  state: State = {
     rated: []
   };
 
-  topList(ghibli: any) {
-    ghibli.sort((a: any, b: any) => b.rating - a.rating)
-  }
-
-  sortName(ghibli: any) {
-    ghibli.sort((a: any, b: any) => a.rating - b.rating)
-  }
-
-  ratingComponentClick(clickObj: any): void {
-    const item = this.films.find(((i: any) => i.id === clickObj.id));
+  ratingComponentClick(clickObj: any) {
+    const item = this.films.find(((i: Film) => i.id === clickObj.id));
     if (!!item) {
       item.rating = clickObj.rating;
       this.ratingClicked = clickObj.rating;
       this.itemIdRatingClicked = item.title;
     }
 
-    if (this.state.rated.find(rating => rating.id === clickObj.id)) {
-      this.state.rated.forEach(r => {
+    if (this.state.rated.find((rating: Film) => rating.id === clickObj.id)) {
+      this.state.rated.forEach((r: Film) => {
         if (r.id === clickObj.id) {
           r.rating = clickObj.rating;
         }
@@ -73,11 +66,15 @@ export class RateComponent implements OnInit {
     })
   }
 
-  setupLocalStorage() {
-    localStorage.setItem('rating', JSON.stringify(this.state.rated))
-  }
-
+  setupLocalStorage() { localStorage.setItem('rating', JSON.stringify(this.state.rated)) }
   constructor(private filmData: FilmsService) { }
 
+  topList(ghibli: Film[]) {
+    ghibli.sort((a: any, b: any) => b.rating - a.rating)
+  }
+
+  sortName(ghibli: Film[]) {
+    ghibli.sort((a: any, b: any) => a.rating - b.rating)
+  }
 
 }
