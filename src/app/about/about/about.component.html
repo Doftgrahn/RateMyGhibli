@@ -1,7 +1,7 @@
 <main class="wrapper">
     <div class="contanier"  *ngFor="let members of members">
-      <img src="{{ members.image }}" alt="404" >
-        <p >{{members.name}}</p>
+      <img class="membersImage"src="{{ members.image }}" alt="404" >
+        <p>{{members.name}}</p>
         <div class="linkHolder">
           <a href="{{members.linkedin}}"><img src="assets/profile_pic/linkedIn.png" alt="404"></a>
           <a href="{{members.git}}"><img src="assets/profile_pic/gitHub.png" alt="404"></a>

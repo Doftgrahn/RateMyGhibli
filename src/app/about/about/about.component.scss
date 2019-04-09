@@ -1,5 +1,14 @@
 @import '../../shared/variables';
 // The scss for the webb starts here
+
+.membersImage:hover{
+  transform:scale(1.4);
+  transition: 0.6s;
+    p{
+    transform:scale(1.4);
+    color: green;
+  }
+}
 .wrapper {
   background-image: url("https://static.boredpanda.com/blog/wp-content/uploads/2016/06/download-free-studio-ghibli-wallpapers-miyazaki-anime-44-57615b19e20b0__880.jpg");
   padding: 20px;
