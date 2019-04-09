@@ -24,12 +24,14 @@ Import Routing, DataService and pipe
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './shared/app-routing.module';
 import { FilmsService } from './shared/films.service';
+import { ForofourComponent } from './forofour/forofour.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    ForofourComponent,
   ],
   imports: [
     MainModule,
