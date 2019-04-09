@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%;
+  display: block;
 
   main {
     position: relative;
@@ -11,17 +13,16 @@
   }
 
   /deep/ router-outlet ~ * {
-    position: relative;
+    position: static;
+    display: block;
     width: 100%;
     height: 100%;
   }
 
   app-footer {
-    margin-bottom: auto;
     position: relative;
     bottom: 0;
     width: 100%;
-    height: 100%;
     left: 0;
     right: 0;
   }
