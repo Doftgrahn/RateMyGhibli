@@ -19,7 +19,7 @@ h1{
   margin:auto;
   justify-content: center;
   background-image: url("https://static.boredpanda.com/blog/wp-content/uploads/2016/06/download-free-studio-ghibli-wallpapers-miyazaki-anime-44-57615b19e20b0__880.jpg");
-  min-height: 100vh;
+  min-height: 70vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -68,14 +68,13 @@ h1{
   cursor: pointer;
   background-color: $color-light-red;
 }
-
 .bigDaydyPicWrapper{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+  text-align: center;
 }
+
 .picWraper{
+  display: inline-grid;
+  justify-content: center;
   margin: 40px;
   margin-bottom: 10px;
   margin-top: 20px;
