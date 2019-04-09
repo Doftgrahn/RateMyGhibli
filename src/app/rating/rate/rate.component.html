@@ -19,9 +19,7 @@
         <button class="topList" (click)="topList(films)">Ascending</button>
         <button class="topList desc" (click)="sortName(films)">Descending</button>
       </div>
-
     </div>
-
     <div class="loop__wrapper">
 
       <div class="rate__container" *ngFor="let ghibli of films | Moviefilter: searchText">
