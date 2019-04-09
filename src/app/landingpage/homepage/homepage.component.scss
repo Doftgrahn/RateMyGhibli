@@ -12,8 +12,9 @@
 }
 
 .items :hover{
+  transition: 0.4s;
   transform: scale(1.2);
-    cursor: pointer;
+  cursor: pointer;
 }
 .items{
   margin: 50px;
@@ -24,23 +25,22 @@
   width: 300px;
 }
 .info{
-  height: 200px;
+  padding: 0;
   background-color: $color-white;
   letter-spacing: 2px;
   text-align: center;
-
 }
-
-p{
-width: 1000px;
-margin-left: 200px;
+.info > p{
+  padding-bottom: 20px;
 }
 
 #left:hover{
+  transition: 0.3s;
   transform: scale(1.7);
 }
 #right:hover{
-transform: scale(1.7);
+  transition: 0.3s;
+  transform: scale(1.7);
 }
 h1{
   color: $color-red;
@@ -58,28 +58,31 @@ h1{
 
 .callToArms:hover{
   cursor: pointer;
+  background-color: $color-light-red;
+}
+.bigDaydyPicWrapper{
+  text-align: center;
 }
 .picWraper{
+  display: inline-grid;
   justify-content: center;
-  display: inline-block;
-  margin:40px;
+  margin: 20px;
 }
 .picWraper > img{
-  margin: 20px;
   height: 350px;
   width: 230px;
 }
 
-@media(max-width: 800px){
-
-.items{
-  width: 650px;
-  height: auto;
+.imgaeText{
+text-align: center;
 }
+
+@media(max-width: 1000px){
+
 
 .carousel{
   height: 400px;
-  width: 273px;
+  width: 277px;
 }
 
 
@@ -92,7 +95,10 @@ h1{
 transform: scale(.8);
 }
 
-.info{
-  height: 350px;
+
+.picWraper {
+margin: 50px;
+margin-top: 20px;
+
 }
 }
