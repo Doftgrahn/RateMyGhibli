@@ -11,11 +11,11 @@
 
   <div class="hamburger__meny" [ngClass]="{'hamburger__active': toggle }">
     <ul>
-      <li> <a routerLink="/home" (click)="toggleOff()">Home</a></li>
-      <li> <a routerLink="/review" (click)="toggleOff()">Review</a></li>
-      <li> <a routerLink="/rating" (click)="toggleOff()">Rating</a></li>
-      <li> <a routerLink="/topList" (click)="toggleOff()">Toplist</a></li>
-      <li> <a routerLink="/about" (click)="toggleOff()">About</a></li>
+      <li> <a routerLink="/home" routerLinkActive="active" (click)="toggleOff()">Home</a></li>
+      <li> <a routerLink="/review" routerLinkActive="active" (click)="toggleOff()">Review</a></li>
+      <li> <a routerLink="/rating" routerLinkActive="active" (click)="toggleOff()">Rating</a></li>
+      <li> <a routerLink="/topList" routerLinkActive="active" (click)="toggleOff()">Toplist</a></li>
+      <li> <a routerLink="/about" routerLinkActive="active" (click)="toggleOff()">About</a></li>
     </ul>
   </div>
 
