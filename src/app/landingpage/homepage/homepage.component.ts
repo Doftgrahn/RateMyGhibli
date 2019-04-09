@@ -30,7 +30,7 @@ this.image = [
   {url:'assets/pics/porco-rosso.jpg',
   name: 'Porco rosso'},
   {url:'assets/pics/My-Neighbor-Totoro.jpg',
-  name: 'My neighbor totorog'},
+  name: 'My neighbor totoro'},
   {url:'assets/pics/the-wind-rises.jpg',
   name: 'Kikis deliery service'},
   {url:'assets/pics/When-Marnie-Was-There.jpg',

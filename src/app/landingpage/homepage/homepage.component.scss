@@ -11,9 +11,9 @@
   background-position: bottom;
 }
 
-
 .items :hover{
   transform: scale(1.2);
+    cursor: pointer;
 }
 .items{
   margin: 50px;
@@ -24,19 +24,21 @@
   width: 300px;
 }
 .info{
-  height: 170px;
+  height: 200px;
   background-color: $color-white;
   letter-spacing: 2px;
   text-align: center;
 
 }
 
-
-#left:hover{
-    transform: scale(1.7);
-
+p{
+width: 1000px;
+margin-left: 200px;
 }
 
+#left:hover{
+  transform: scale(1.7);
+}
 #right:hover{
 transform: scale(1.7);
 }
@@ -54,8 +56,8 @@ h1{
   background-color: $color-red;
 }
 
-.bigDaydyPicWrapper{
-  // background-color: $color-gray;
+.callToArms:hover{
+  cursor: pointer;
 }
 .picWraper{
   justify-content: center;
