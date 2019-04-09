@@ -14,6 +14,8 @@ export class AddReviewComponent implements OnInit {
     username: ''
   };
 
+  comments: any = [];
+
   movieTitleControl: AbstractControl;
   releaseYearControl: AbstractControl;
   commentFieldControl: AbstractControl;
@@ -25,9 +27,10 @@ export class AddReviewComponent implements OnInit {
     this.formContent.year = this.releaseYearControl.value
     this.formContent.comment =  this.commentFieldControl.value
     this.formContent.username = this.usersNameControl.value
-    let comments = JSON.parse(localStorage.getItem('comments')) || [];
-    comments.push(this.formContent);
-    localStorage.setItem('comments', JSON.stringify(comments));
+    this.comments = JSON.parse(localStorage.getItem('comments')) || [];
+    this.comments.unshift(this.formContent);
+    localStorage.setItem('comments', JSON.stringify(this.comments.map(i => i)));
+    this.reviewForm.reset();
   }
 
 
@@ -48,7 +51,7 @@ export class AddReviewComponent implements OnInit {
     this.commentFieldControl = this.reviewForm.get('commentFieldControl');
     this.usersNameControl = this.reviewForm.get('usersNameControl');
 
-
+    this.comments = JSON.parse(localStorage.getItem('comments')) || [];
   }
 
   isNumber(x: any) {

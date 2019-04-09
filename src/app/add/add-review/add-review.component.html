@@ -18,7 +18,7 @@
 
   <div class="formular">
     <label>Year of release</label>
-    <input type="text"
+    <input type="number"
     formControlName="releaseYearControl"
 		[class.invalid]="releaseYearControl.invalid && (releaseYearControl.touched || releaseYearControl.dirty)"
 		[class.valid]="releaseYearControl.valid && (releaseYearControl.touched || releaseYearControl.dirty)"/>
@@ -61,6 +61,6 @@
   <button class="btn" (click)="showWhatUserWrote()" [ngClass]="{'disabled':!reviewForm.valid}">Send</button>
 
   </div>
-  <app-show-review></app-show-review>
+  <app-show-review [comments]="comments"></app-show-review>
 
 </div>
