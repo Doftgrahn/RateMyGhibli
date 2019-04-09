@@ -59,7 +59,7 @@
         display: block;
         flex: 1;
         margin: 20px;
-        border-radius: 20px;
+        border-radius: 10px;
         height: 50px;
         outline: none;
         border: none;
@@ -71,14 +71,6 @@
         }
       }
 
-      span {
-        text-transform: uppercase;
-        font-weight: bold;
-        padding: 10px;
-        cursor: pointer;
-        display: block;
-      }
-
       .button__container {
         display: flex;
         flex-direction: row;
@@ -86,6 +78,13 @@
         justify-content: center;
         @media screen and (min-width: 800px) {
           justify-content: flex-end;
+        }
+
+        span {
+          text-transform: uppercase;
+          font-weight: bold;
+          padding: 10px;
+          cursor: pointer;
         }
       }
     }
@@ -104,7 +103,9 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      border-top: 1.4px solid $color-black;
+      //border-top: 1.4px solid $color-black;
+      background-color: $color-white;
+      margin-top: 10px;
       flex-wrap: wrap;
       cursor: pointer;
       transform-origin: left;
@@ -125,6 +126,7 @@
       }
 
       &__info {
+        animation: 1s spin alternate;
         display: block;
         text-align: left;
         flex: 1;
@@ -143,7 +145,7 @@
   outline: none;
   cursor: pointer;
   border: none;
-  transition: 0.2s;
+  transition: 0.2s ease;
   border-radius: 10px;
   text-transform: uppercase;
   font-weight: bold;
@@ -153,15 +155,11 @@
   }
 
   &:hover {
-    opacity: 0.7;
+    transform: scale(1.1);
   }
 }
 
 .desc {
   margin-left: 10px;
   background-color: $color-blue;
-
-  &:hover {
-    opacity: 0.7;
-  }
 }

@@ -9,7 +9,6 @@
   min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
-  //background-attachment: fixed;
   background-position: bottom;
   display: flex;
   flex-direction: column;
@@ -80,18 +79,6 @@ h2 {
     }
 }
 
-/* Rating on the left side of the movie info
-.rating {
-    top: 130px;
-    left: -50px;
-    color: #120404;
-    position: relative;
-    font-size: 30px;
-    font-weight: bold;
-    line-height: 33px;
-    font-family: Poppins,verdana,sans-serif;
-} */
-
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -112,6 +99,5 @@ h2 {
       transform: translateX(0);
       transform: rotateX(0);
     }
-
   }
 }
