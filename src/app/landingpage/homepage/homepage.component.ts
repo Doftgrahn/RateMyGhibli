@@ -42,7 +42,9 @@ this.image = [
   {url:'assets/pics/Tales-from-Earthsea.jpg',
   name: 'Kikis deliery service'},
   {url:'assets/pics/Princess-Mononoke.jpg',
-  name: 'Kikis deliery service'}
+  name: 'Kikis deliery service'},
+  {url:'assets/pics/Pom-Poko.jpg',
+  name: 'Pom poko'}
 ];
 
      this.items =[
