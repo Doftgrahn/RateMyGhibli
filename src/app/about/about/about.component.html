@@ -1,43 +1,11 @@
-<main class="contaner">
-
-  <main calss="wrapper">
-    <div class="Kamphol">
-      <img src="assets/profile_pic/Kampis.jpg" alt="404" >
-        <p class="kampisName">Kamphol Taeng-Iam</p>
+<main class="wrapper">
+    <div class="contanier"  *ngFor="let members of members">
+      <img src="{{ members.image }}" alt="404" >
+        <p >{{members.name}}</p>
         <div class="linkHolder">
-          <a href=""><img src="assets/profile_pic/linkedIn.png" alt="404"></a>
-          <a href=""><img src="assets/profile_pic/gitHub.png" alt="404"></a>
+          <a href="{{members.linkedin}}"><img src="assets/profile_pic/linkedIn.png" alt="404"></a>
+          <a href="{{members.git}}"><img src="assets/profile_pic/gitHub.png" alt="404"></a>
           <a href=""><img class="gMail" src="assets/profile_pic/gmail.png" alt="404"></a>
         </div>
     </div>
-        <div class="Olga">
-          <img src="assets/profile_pic/Olga.jpg" alt="404" >
-            <p>Olga Tselyuk</p>
-            <div class="linkHolder">
-              <a href=""><img src="assets/profile_pic/linkedIn.png" alt="404"></a>
-              <a href=""><img src="assets/profile_pic/gitHub.png" alt="404"></a>
-              <a href=""><img class="gMail" src="assets/profile_pic/gmail.png" alt="404"></a>
-            </div>
-        </div>
-      <div class="Simon">
-        <img src="assets/profile_pic/Simon.jpeg" alt="404" >
-          <p>Simon Grahn</p>
-          <div class="linkHolder">
-            <a href=""><img src="assets/profile_pic/linkedIn.png" alt="404"></a>
-            <a href=""><img src="assets/profile_pic/gitHub.png" alt="404"></a>
-            <a href=""><img class="gMail" src="assets/profile_pic/gmail.png" alt="404"></a>
-          </div>
-      </div>
-    <div class="Ieva">
-      <img src="assets/profile_pic/Ieva.jpg" alt="404" >
-        <p>Ieva Lundin</p>
-        <div class="linkHolder">
-          <a href=""><img src="assets/profile_pic/linkedIn.png" alt="404"></a>
-          <a href=""><img src="assets/profile_pic/gitHub.png" alt="404"></a>
-          <a href=""><img class="gMail" src="assets/profile_pic/gmail.png" alt="404"></a>
-        </div>
-    </div>
-
-  </main>
-
 </main>
