@@ -9,15 +9,15 @@
     <p *ngIf="ratingClicked">The movie {{itemIdRatingClicked}} has been given {{ratingClicked}} stars</p>
 
     <div class="filter__container">
-      
+
       <label for="search">Filter</label>
 
       <input id="search" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search!" />
 
       <div class="button__container">
-        <span>Sort</span>
-        <i class="fas fa-caret-up" (click)="topList(films)"></i>
+
         <i class="fas fa-caret-down" (click)="sortName(films)"></i>
+        <i class="fas fa-caret-up" (click)="topList(films)"></i>
       </div>
     </div>
     <div class="loop__wrapper">
