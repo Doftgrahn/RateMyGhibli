@@ -9,10 +9,5 @@ import { fadeAnimation } from './animations/fade.animation';
   animations: [fadeAnimation]
 })
 export class AppComponent {
-
-
-  public getRouterOuletState(outlet: any) {
-    return outlet.isActivated ? outlet.activatedRoute : '';
-  }
-  
+  public getRouterOuletState(outlet: any) { return outlet.isActivated ? outlet.activatedRoute : ''; }
 }
