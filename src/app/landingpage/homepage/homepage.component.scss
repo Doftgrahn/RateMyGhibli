@@ -28,7 +28,7 @@ h1{
 
 .items:hover {
   transition: 1s;
-  transform: scale(1.2);
+  transform: scale(1.1);
   cursor: pointer;
 }
 
@@ -51,10 +51,11 @@ h1{
 
 
 .info{
+  font-size: 120%;
   height: 300px;
   padding: 0;
   background-color: $color-white;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   font-weight: bold;
   text-align: center;
   display: inline-table;
@@ -81,6 +82,7 @@ margin: 20px;
 }
 .bigDaydyPicWrapper{
   text-align: center;
+  margin-top: 20px;
 }
 
 .picWraper{
@@ -92,9 +94,8 @@ margin: 20px;
 }
 
 .picWraper:hover{
-  margin: 40px;
   transition: 1s;
-  transform: scale(1.2);
+  transform: scale(1.1);
     h3 {
     font-weight: bold;
 
