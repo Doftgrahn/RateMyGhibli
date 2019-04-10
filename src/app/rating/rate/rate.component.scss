@@ -6,7 +6,7 @@
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  padding: 20px;
+  padding: $regular-spacing;
   background-image: url("https://static.boredpanda.com/blog/wp-content/uploads/2016/06/download-free-studio-ghibli-wallpapers-miyazaki-anime-44-57615b19e20b0__880.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -16,8 +16,8 @@
   &__wrapper {
     width: 100%;
     margin-bottom: $regular-spacing;
-    padding: 10px;
-    border-radius: 10px;
+    padding: $small-spacing;
+    border-radius: $small-spacing;
     background-color: #daefee7a;
     @media screen and (min-width: 800px) {
       max-width: 70%;
@@ -36,7 +36,7 @@
       flex-wrap: wrap;
       justify-content: space-around;
       width: auto;
-      padding-bottom: 10px;
+      padding-bottom: $small-spacing;
       @media screen and (min-width: 800px) {
         flex-wrap: nowrap;
         justify-content: center;
@@ -45,8 +45,8 @@
 
       label {
         font-weight: bold;
-        margin-top: 10px;
-        padding: 10px;
+        margin-top: $small-spacing;
+        padding: $small-spacing;
         cursor: pointer;
         text-transform: uppercase;
         color: $color-black;
@@ -57,11 +57,11 @@
         display: block;
         flex: 1;
         height: 50px;
-        margin: 20px;
-        padding: 20px;
+        margin: $regular-spacing;
+        padding: $regular-spacing;
         color: $color-black;
         border: none;
-        border-radius: 10px;
+        border-radius: $small-spacing;
         outline: none;
         background-color: $color-white;
 
@@ -82,7 +82,7 @@
 
         span {
           font-weight: bold;
-          padding: 10px;
+          padding: $small-spacing;
           cursor: pointer;
           text-transform: uppercase;
         }
@@ -102,8 +102,8 @@
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
-      margin-top: 10px;
-      padding: 10px 20px;
+      margin-top: $small-spacing;
+      padding: $small-spacing $regular-spacing;
       cursor: pointer;
       transition: 0.2s;
       transform-origin: left;
@@ -129,7 +129,7 @@
         display: block;
         flex: 1;
         margin: 0;
-        padding: 10px 20px;
+        padding: $small-spacing $regular-spacing;
         cursor: pointer;
         animation: 1s spin alternate;
         text-align: left;
@@ -140,14 +140,14 @@
 
 .topList {
   font-weight: bold;
-  margin-right: 10px;
-  padding: 5px 10px;
+  margin-right: $small-spacing;
+  padding: 5px $small-spacing;
   cursor: pointer;
   transition: 0.2s ease;
   text-transform: uppercase;
   color: $color-white;
   border: none;
-  border-radius: 10px;
+  border-radius: $small-spacing;
   outline: none;
   background-color: $color-light-red;
   @media screen and (min-width: 800px) {
@@ -160,6 +160,6 @@
 }
 
 .desc {
-  margin-left: 10px;
+  margin-left: $small-spacing;
   background-color: $color-blue;
 }

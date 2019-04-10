@@ -50,13 +50,13 @@
   display: inline-block;
   margin-left: auto;
   margin-left: 14px;
-  padding: 5px 10px;
+  padding: 5px $small-spacing;
   cursor: pointer;
   transition: 0.2s;
   text-transform: uppercase;
   color: $color-white;
   border: none;
-  border-radius: 10px;
+  border-radius: $small-spacing;
   outline: none;
   background-color: $color-light-red;
 

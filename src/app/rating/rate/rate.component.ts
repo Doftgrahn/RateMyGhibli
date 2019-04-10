@@ -13,17 +13,16 @@ import { State } from '../../shared/state';
 })
 
 export class RateComponent implements OnInit {
-  selectedIndex: number;
-  searchText: Film[];       /*For Search*/
-  films: Film[] = [];      /*Get Film*/
-  ratingClicked: Film[];
+  searchText: Film[];       
+  films: Film[] = [];
+  ratingClicked: string;
   itemIdRatingClicked: string;
 
   state: State = {
     rated: []
   };
 
-  ratingComponentClick(clickObj: any) {
+  ratingComponentClick(clickObj: Film) {
     const item = this.films.find(((i: Film) => i.id === clickObj.id));
     if (!!item) {
       item.rating = clickObj.rating;
@@ -69,12 +68,8 @@ export class RateComponent implements OnInit {
   setupLocalStorage() { localStorage.setItem('rating', JSON.stringify(this.state.rated)) }
   constructor(private filmData: FilmsService) { }
 
-  topList(ghibli: Film[]) {
-    ghibli.sort((a: any, b: any) => b.rating - a.rating)
-  }
+  topList(ghibli: Film[]) { ghibli.sort((a: any, b: any) => b.rating - a.rating) }
 
-  sortName(ghibli: Film[]) {
-    ghibli.sort((a: any, b: any) => a.rating - b.rating)
-  }
+  sortName(ghibli: Film[]) { ghibli.sort((a: any, b: any) => a.rating - b.rating) }
 
 }
