@@ -16,23 +16,23 @@
   </ng-template>
 
 
-<div class="info">
-<button class="callToArms">Checkout more</button>
-<div class="infoText">
+  <div class="info">
+    <a routerLink="/topList" routerLinkActive="active" (click)="toggleOff()"> <button class="callToArms">Checkout more</button></a>
+    <div class="infoText">
 
-<p>
-  The name Ghibli was given by Hayao Miyazaki from the Italian noun ghibli,based on the Libyan-Arabic <br>
-   name for the hot desert wind of that country, the idea being the studio would " blow a new wind through <br>
-   the anime industry". It also refers to an Italian aircraft, the Caproni Ca.309 Ghibli. Although the Italian <br>
-    word is more accurately transliterated as ギブリ (Giburi),
-    the Japanese name of the studio is ジブリ (Jiburi).
-    </p>
+      <p>
+        The name Ghibli was given by Hayao Miyazaki from the Italian noun ghibli,based on the Libyan-Arabic <br>
+        name for the hot desert wind of that country, the idea being the studio would " blow a new wind through <br>
+        the anime industry". It also refers to an Italian aircraft, the Caproni Ca.309 Ghibli. Although the Italian <br>
+        word is more accurately transliterated as ギブリ (Giburi),
+        the Japanese name of the studio is ジブリ (Jiburi).
+      </p>
+    </div>
   </div>
-</div>
-<div class="bigDaydyPicWrapper" >
+  <div class="bigDaydyPicWrapper">
 
     <div *ngFor="let image of image" class="picWraper">
-        <img src="{{ image.url }}" alt="404">
-              <h3 class="imgaeText">{{image.name }} </h3>
+      <img src="{{ image.url }}" alt="404">
+      <h3 class="imgaeText">{{image.name }} </h3>
     </div>
-</div>
+  </div>
