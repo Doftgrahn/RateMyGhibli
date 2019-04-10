@@ -40,9 +40,16 @@ footer {
 }
 
 .map {
+  position: relative;
+  top: -20px;
   h2 {
     color: $color-white;
     padding-top: 0;
     margin: 0;
+  }
+  img {
+    width: auto;
+    height: 200px;
+    padding-bottom: 20px;
   }
 }
