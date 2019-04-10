@@ -4,12 +4,6 @@ img{
   border-radius: 5px 5px;
 }
 
-.items:hover {
-  transition: 1s;
-  transform: scale(1.2);
-  cursor: pointer;
-}
-
 h1{
   color: $color-red;
 }
@@ -30,8 +24,14 @@ h1{
   margin-top: 70px;
   margin-bottom: 70px;
   margin: 40px;
-
 }
+
+.items:hover {
+  transition: 1s;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
 
 .carousel{
   height: 480px;
@@ -60,14 +60,13 @@ h1{
   display: inline-table;
   justify-content: center;
   align-items: center;
-
+  width: 100%;
 }
-.info > p{
-  padding-bottom: 20px;
-
+.infoText{
+margin: 20px;
 }
 .callToArms{
-    margin: 50px;
+  margin: 30px;
   color: $color-white;
   border-radius: 5px 5px;
   padding: 20px;
