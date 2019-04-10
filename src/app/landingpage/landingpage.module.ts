@@ -9,4 +9,4 @@ import { Ng2CarouselamosModule } from 'ng2-carouselamos';
      Ng2CarouselamosModule
   ]
 })
-export class LandingpageModule { }
+export class LandingpageModule {}

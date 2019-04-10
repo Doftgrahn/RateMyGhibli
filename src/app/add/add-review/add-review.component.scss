@@ -1,7 +1,7 @@
 @import '../../shared/variables';
 
 .wrapEverything {
-	background-image: url(https://static.boredpanda.com/blog/wp-content/uploads/2016/06/download-free-studio-ghibli-wallpapers-miyazaki-anime-44-57615b19e20b0__880.jpg);
+	//background-image: url(https://static.boredpanda.com/blog/wp-content/uploads/2016/06/download-free-studio-ghibli-wallpapers-miyazaki-anime-44-57615b19e20b0__880.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	min-height: 100vh;
@@ -11,7 +11,6 @@
 	justify-content: center;
 	align-items: center;
 	font-family: "Roboto";
-
 }
 
 .container {
@@ -20,22 +19,23 @@
 		width: 70%;
 	}
 }
+
 label {
 	padding: 0.4em;
 	display: block;
 	margin-top: 0.5em;
 	font-size: 18px;
-
 }
 
 h2 {
 	padding-top: 20px;
-  text-align: center;
+	text-align: center;
 	margin: 0;
 }
 
-input, textarea {
-  width: 100%;
+input,
+textarea {
+	width: 100%;
 	padding: 0.5em;
 	border-radius: 5px;
 	font-size: 18px;
