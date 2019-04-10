@@ -13,7 +13,7 @@ import { State } from '../../shared/state';
 })
 
 export class RateComponent implements OnInit {
-  searchText: Film[];       
+  searchText: Film[];
   films: Film[] = [];
   ratingClicked: string;
   itemIdRatingClicked: string;

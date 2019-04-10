@@ -4,7 +4,6 @@
   width: 60em;
   margin: 20px;
   background-color: #daefee7a;
-  padding: 20px;
   border-radius: 5px;
   letter-spacing: 1.2px;
   text-align: left;
@@ -14,10 +13,9 @@
   @media (max-width: 625px) {
     width: 90%;
   }
-
 }
-
 
 .separateComment {
   border-bottom: 1px solid gray;
+  padding: 20px;
 }
