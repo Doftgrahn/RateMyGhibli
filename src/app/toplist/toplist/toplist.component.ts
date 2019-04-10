@@ -21,7 +21,6 @@ export class ToplistComponent implements OnInit {
     }).filter((movie,index) => index < 5))
   }
 
-
   pictures = ['assets/pics/Only-Yesterday.jpg',
     'assets/pics/The-tale-of-princess-kaguya.jpg',
     'assets/pics/Grave-of-the-Fireflies.jpg',
