@@ -1,10 +1,11 @@
 <div class="usersComment">
-<h3>{{reviewInfo.title}} {{reviewInfo.year}}</h3>
 
-<div class="commentText">
-  {{reviewInfo.comment}}
-</div>
 
-<p class="signature">{{reviewInfo.username}}</p>
+  <div *ngFor="let comment of comments" class="separateComment">
+    <h3>Movie title: {{comment.title}}</h3>
+    <p>Year of release: {{comment.year}}</p>
+    <p>Review: {{comment.comment}}</p>
+    <p class="signature">Username: {{comment.username}}</p>
+  </div>
 
 </div>
