@@ -11,14 +11,14 @@ import { ToplistComponent } from '../toplist/toplist/toplist.component';
 import { AboutComponent } from '../about/about/about.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomepageComponent },
   { path: 'review', component: AddReviewComponent },
   { path: 'rating', component: RateComponent },
   { path: 'topList', component: ToplistComponent },
   { path: 'about', component: AboutComponent },
   { path: '404', component: ForofourComponent },
-  { path: '**', redirectTo: '/404', pathMatch: 'full' },
+  { path: '**', redirectTo: '404', pathMatch: 'full' },
 ];
 
 
