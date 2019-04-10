@@ -162,3 +162,20 @@
   margin-left: $small-spacing;
   background-color: $color-blue;
 }
+
+.fas {
+  font-size: 250%;
+  transition: 0.2s ease;
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 5px;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+.fa-caret-up {
+  color: $color-light-red;
+}
+.fa-caret-down {
+  color: $color-blue;
+}
