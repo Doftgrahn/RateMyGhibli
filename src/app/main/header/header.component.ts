@@ -19,8 +19,6 @@ export class HeaderComponent implements OnInit {
     this.toggle = false;
   }
 
-
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

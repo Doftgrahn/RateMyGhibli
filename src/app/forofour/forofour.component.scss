@@ -1,19 +1,24 @@
 @import '../shared/variables';
 
 :host {
+  flex-direction: column;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  background-image: url("../../assets/pics/Grave-of-the-Fireflies.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+
+  .giphy-embed {
+    display: inline-block;
+    height: 500px;
+    min-width: 100%;
+    border: none;
+  }
 
   h1 {
     padding: 20px;
     font-size: 800%;
     font-weight: bold;
+    line-height: 70%;
     margin: 0;
     color: $color-white;
   }
@@ -23,6 +28,7 @@
     text-decoration: underline;
     text-transform: full-width;
     font-weight: bold;
+    margin-bottom:10px;
     margin: 0;
     color: $color-white;
   }

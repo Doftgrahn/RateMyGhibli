@@ -2,10 +2,10 @@
 
 .rating {
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: center;
   align-items: center;
+  flex-direction: row-reverse;
   flex-wrap: nowrap;
+  justify-content: center;
   outline: none;
 }
 
@@ -17,11 +17,11 @@
 }
 
 .rating:not(:checked) > label {
-  max-width: 1em;
-  overflow: hidden;
-  white-space: nowrap;
-  cursor: pointer;
   font-size: 200%;
+  overflow: hidden;
+  max-width: 1em;
+  cursor: pointer;
+  white-space: nowrap;
   color: $color-gray;
   outline: none;
 }
@@ -46,21 +46,21 @@
 }
 
 .clearRating {
+  font-weight: bold;
   display: inline-block;
   margin-left: auto;
-  background-color: $color-light-red;
-  padding: 5px 10px;
   margin-left: 14px;
-  outline: none;
+  padding: 5px $small-spacing;
   cursor: pointer;
-  border: none;
   transition: 0.2s;
-  border-radius: 10px;
   text-transform: uppercase;
-  font-weight: bold;
   color: $color-white;
+  border: none;
+  border-radius: $small-spacing;
+  outline: none;
+  background-color: $color-light-red;
 
   &:hover {
-    transform:scale(1.1);
+    transform: scale(1.1);
   }
 }

@@ -1,51 +1,71 @@
 @import '../../shared/variables';
-@import "../../../../node_modules/bootstrap/scss/bootstrap.scss";
 
-* {
-	font-family: montserrat;
-	/*background: url(https://static.boredpanda.com/blog/wp-content/uploads/2016/06/download-free-studio-ghibli-wallpapers-miyazaki-anime-44-57615b19e20b0__880.jpg);
-*/}
-
-label {
-	display: block;
-	margin-top: 0.5em;
-	font-family: montserrat;
-}
-
-.formular {
-  padding: 1em;
-
+.wrapEverything {
+	//background-image: url(https://static.boredpanda.com/blog/wp-content/uploads/2016/06/download-free-studio-ghibli-wallpapers-miyazaki-anime-44-57615b19e20b0__880.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 100vh;
+	background-position: bottom;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-family: "Roboto";
 }
 
 .container {
-	text-align: center;
-	padding: 3em;
+	width: 50em;
+	@media (max-width: 1025px) {
+		width: 95%;
+	}
+}
 
+label {
+	padding: 0.4em;
+	display: block;
+	margin-top: 0.5em;
+	font-size: 18px;
 }
 
 h2 {
-  text-align: center;
+	padding-top: 20px;
+	text-align: center;
+	margin: 0;
 }
 
-#comments {
-  height: 4em;
+input,
+textarea {
+	width: 100%;
+	padding: 0.5em;
+	border-radius: 5px;
+	font-size: 18px;
 }
-
-input, textarea {
-  width: 50%;
-}
-
-/*#checkbox {
-  margin-top: 1em;
-  text-align: left;
-  width: auto;
-}*/
 
 .errorMessage {
-	color: red;
+	color: $color-red;
+	font-size: 18px;
+	margin-top: 0.5em;
 }
 
 .btn {
-	border: 1px solid blue;
 	margin: 1em;
+	border: 2px solid $color-blue;
+	border-radius: 5px;
+	padding: 0.5em;
+	cursor: pointer;
+	color: $color-blue;
+	background-color: transparent;
+	font-size: 22px;
+	float: right;
+}
+
+button:hover {
+	transition-duration: 0.4s;
+	background-color: $color-blue;
+	color: $color-white;
+}
+
+.disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
 }

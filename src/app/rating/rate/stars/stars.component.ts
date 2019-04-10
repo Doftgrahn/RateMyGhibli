@@ -1,17 +1,19 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
+
 @Component({
   selector: 'app-stars',
   templateUrl: './stars.component.html',
   styleUrls: ['./stars.component.scss']
 })
 export class StarsComponent implements OnInit {
+  inputName: string;
 
   @Input() rating: number;
-  @Input() id: number;
+  @Input() id: string;
   @Output() ratingClick: EventEmitter<any> = new EventEmitter<any>();
 
-  inputName: string;
+
 
   ngOnInit() {
     this.inputName = this.id + '_rating';
@@ -25,8 +27,6 @@ export class StarsComponent implements OnInit {
     })
   }
 
-  resetRating() {
-    this.onClick(null);
-  }
-
+  resetRating() { this.onClick(null); }
+  
 }

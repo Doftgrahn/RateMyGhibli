@@ -1,24 +1,23 @@
 @import '../../shared/variables';
 /*....--------------...*/
 .rate {
-  background-image: url("https://static.boredpanda.com/blog/wp-content/uploads/2016/06/download-free-studio-ghibli-wallpapers-miyazaki-anime-44-57615b19e20b0__880.jpg");
-  padding: 20px;
-  min-height: 100vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  min-height: 100vh;
+  padding: $regular-spacing;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 
   &__wrapper {
-    border-radius: 10px;
-    padding: 10px;
     width: 100%;
-    background-color: #daefee7a;
     margin-bottom: $regular-spacing;
+    padding: $small-spacing;
+    border-radius: $small-spacing;
+    background-color: #daefee7a;
     @media screen and (min-width: 800px) {
       max-width: 70%;
       padding: $regular-spacing;
@@ -31,12 +30,12 @@
 
     .filter__container {
       display: flex;
-      flex-direction: row;
-      justify-content: space-around;
       align-items: center;
+      flex-direction: row;
       flex-wrap: wrap;
+      justify-content: space-around;
       width: auto;
-      padding-bottom: 10px;
+      padding-bottom: $small-spacing;
       @media screen and (min-width: 800px) {
         flex-wrap: nowrap;
         justify-content: center;
@@ -44,112 +43,112 @@
       }
 
       label {
-        color: $color-black;
-        text-transform: uppercase;
         font-weight: bold;
-        padding: 10px;
-        margin-top: 10px;
+        margin-top: $small-spacing;
+        padding: $small-spacing;
         cursor: pointer;
+        text-transform: uppercase;
+        color: $color-black;
       }
 
       input {
-        color: $color-black;
-        background-color: $color-white;
-        padding: 20px;
+        font-size: 1em;
         display: block;
         flex: 1;
-        margin: 20px;
-        border-radius: 10px;
         height: 50px;
-        outline: none;
+        margin: $regular-spacing;
+        padding: $regular-spacing;
+        color: $color-black;
         border: none;
-        font-size: 1em;
+        border-radius: $small-spacing;
+        outline: none;
+        background-color: $color-white;
 
         &::placeholder {
-          color: $color-black;
           font-size: 1em;
+          color: $color-black;
         }
       }
 
       .button__container {
         display: flex;
-        flex-direction: row;
         align-items: center;
+        flex-direction: row;
         justify-content: center;
         @media screen and (min-width: 800px) {
           justify-content: flex-end;
         }
 
         span {
-          text-transform: uppercase;
           font-weight: bold;
-          padding: 10px;
+          padding: $small-spacing;
           cursor: pointer;
+          text-transform: uppercase;
         }
       }
     }
 
     .loop__wrapper {
-      width: auto;
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
+      width: auto;
+      min-height: 100vh;
     }
 
     .rate__container {
-      transition: 0.2s;
-      padding: 10px 20px;
       display: flex;
-      flex-direction: row;
-      justify-content: center;
       align-items: center;
-      //border-top: 1.4px solid $color-black;
-      background-color: $color-white;
-      margin-top: 10px;
+      flex-direction: row;
       flex-wrap: wrap;
+      justify-content: center;
+      margin-top: $small-spacing;
+      padding: $small-spacing $regular-spacing;
       cursor: pointer;
+      transition: 0.2s;
       transform-origin: left;
-      animation: 1s spin alternate;
+      animation: 1s spin alternate ease-in-out;
+      background-color: $color-white;
       @keyframes spin {
         0% {
-          opacity: 0;
           transform: translateY(180deg);
           transform: rotateY(180deg);
           transform: rotateX(180deg);
+          opacity: 0;
         }
 
         100% {
-          opacity: 1;
           transform: translateY(0);
+          transform: rotateY(0);
           transform: rotateX(0);
+          opacity: 1;
         }
       }
 
       &__info {
-        animation: 1s spin alternate;
         display: block;
-        text-align: left;
         flex: 1;
-        cursor: pointer;
         margin: 0;
-        padding: 10px 20px;
+        padding: $small-spacing $regular-spacing;
+        cursor: pointer;
+        animation: 1s spin alternate;
+        text-align: left;
       }
     }
   }
 }
 
 .topList {
-  margin-right: 10px;
-  background-color: $color-light-red;
-  padding: 5px 10px;
-  outline: none;
-  cursor: pointer;
-  border: none;
-  transition: 0.2s ease;
-  border-radius: 10px;
-  text-transform: uppercase;
   font-weight: bold;
+  margin-right: $small-spacing;
+  padding: 5px $small-spacing;
+  cursor: pointer;
+  transition: 0.2s ease;
+  text-transform: uppercase;
   color: $color-white;
+  border: none;
+  border-radius: $small-spacing;
+  outline: none;
+  background-color: $color-light-red;
   @media screen and (min-width: 800px) {
     margin-right: 0;
   }
@@ -160,6 +159,25 @@
 }
 
 .desc {
-  margin-left: 10px;
+  margin-left: $small-spacing;
   background-color: $color-blue;
+}
+
+.fas {
+  font-size: 250%;
+  transition: 0.2s ease;
+  cursor: pointer;
+  padding: 5px;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.fa-caret-up {
+  color: $color-light-red;
+}
+
+.fa-caret-down {
+  color: $color-blue;
 }

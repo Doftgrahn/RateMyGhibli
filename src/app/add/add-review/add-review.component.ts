@@ -14,13 +14,8 @@ export class AddReviewComponent implements OnInit {
     username: ''
   };
 
-  reviewForm: FormGroup = new FormGroup({
-		movieTitleControl: new FormControl('', [Validators.required, Validators.minLength(2)]),
-		releaseYearControl: new FormControl('', [Validators.required, this.isNumber, Validators.minLength(4), Validators.maxLength(4)]),
-    commentFieldControl: new FormControl('',[Validators.required]),
-    usersNameControl: new FormControl('', [Validators.required])
-		}
-	);
+  comments: any = [];
+
   movieTitleControl: AbstractControl;
   releaseYearControl: AbstractControl;
   commentFieldControl: AbstractControl;
@@ -28,28 +23,35 @@ export class AddReviewComponent implements OnInit {
 
 
   showWhatUserWrote() {
-    this.formContent.title = this.movieTitleControl.value,
-    this.formContent.year = this.releaseYearControl.value,
-    this.formContent.comment =  this.commentFieldControl.value,
-    this.formContent.username = this.usersNameControl.value,
-    localStorage.setItem(this.formContent, JSON.stringify(this.formContent));
+    this.formContent.title = this.movieTitleControl.value
+    this.formContent.year = this.releaseYearControl.value
+    this.formContent.comment =  this.commentFieldControl.value
+    this.formContent.username = this.usersNameControl.value
+    this.comments = JSON.parse(localStorage.getItem('comments')) || [];
+    this.comments.unshift(this.formContent);
+    localStorage.setItem('comments', JSON.stringify(this.comments.map(i => i)));
+    this.reviewForm.reset();
   }
+
+
+      reviewForm = this.formBuilder.group({
+        movieTitleControl: [null, [Validators.required, Validators.minLength(2)]],
+        releaseYearControl: [null, [Validators.required, Validators.minLength(4), Validators.maxLength(4)]],
+        commentFieldControl: [null,[Validators.required]],
+        usersNameControl: [null,[Validators.required]]
+      });
 
 
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.movieTitleControl = this.reviewForm.controls['movieTitleControl'];
-		this.releaseYearControl = this.reviewForm.controls['releaseYearControl'];
-    this.commentFieldControl = this.reviewForm.controls['commentFieldControl'];
-    this.usersNameControl = this.reviewForm.controls['usersNameControl'];
 
-    this.reviewForm = this.formBuilder.group({
-      movieTitleControl: [null, [Validators.required, Validators.minLength(2)]],
-      releaseYearControl: [null, [Validators.required, Validators.minLength(4), Validators.maxLength(4)]],
-      commentFieldControl: [null,[Validators.required]],
-      usersNameControl: [null,[Validators.required]]
-    });
+    this.movieTitleControl = this.reviewForm.get('movieTitleControl');
+		this.releaseYearControl = this.reviewForm.get('releaseYearControl');
+    this.commentFieldControl = this.reviewForm.get('commentFieldControl');
+    this.usersNameControl = this.reviewForm.get('usersNameControl');
+
+    this.comments = JSON.parse(localStorage.getItem('comments')) || [];
   }
 
   isNumber(x: any) {

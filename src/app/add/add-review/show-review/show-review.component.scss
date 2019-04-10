@@ -1,11 +1,23 @@
 @import '../../../shared/variables';
-@import "../../../../../node_modules/bootstrap/scss/bootstrap.scss";
 
-.userComment {
-  text-align: center;
-  padding: 3em;
+.usersComment {
+  width: 60em;
+  margin: 20px;
+  background-color: #daefee7a;
+  padding: 20px;
+  border-radius: 5px;
+  letter-spacing: 1.2px;
+  text-align: left;
+  @media (max-width: 1000px) {
+    width: 600px;
+  }
+  @media (max-width: 625px) {
+    width: 90%;
+  }
+
 }
 
-.commentText {
-  margin: 2em;
+
+.separateComment {
+  border-bottom: 1px solid gray;
 }
