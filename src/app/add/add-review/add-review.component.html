@@ -1,3 +1,4 @@
+<div class="wrapEverything">
 <h2>Leave a review!</h2>
 
 <div class="container" [formGroup]="reviewForm">
@@ -5,7 +6,7 @@
   <div class="formular">
     <label>Movie title</label>
     <input type="text"
-    [formControl]="movieTitleControl"
+    formControlName ="movieTitleControl"
 		[class.invalid]="movieTitleControl.invalid && (movieTitleControl.touched || movieTitleControl.dirty)"
 		[class.valid]="movieTitleControl.valid && (movieTitleControl.touched || movieTitleControl.dirty)"/>
 
@@ -17,8 +18,8 @@
 
   <div class="formular">
     <label>Year of release</label>
-    <input type="text"
-    [formControl]="releaseYearControl"
+    <input type="number"
+    formControlName="releaseYearControl"
 		[class.invalid]="releaseYearControl.invalid && (releaseYearControl.touched || releaseYearControl.dirty)"
 		[class.valid]="releaseYearControl.valid && (releaseYearControl.touched || releaseYearControl.dirty)"/>
 
@@ -37,8 +38,8 @@
 
   <div class="formular">
     <label>Your comment</label>
-    <textarea type="text" placeholder="Tell us what did you like about this movie" id="comments"
-     [formControl]="commentFieldControl"
+    <textarea type="text" id="comments"
+     formControlName="commentFieldControl"
 		[class.invalid]="commentFieldControl.invalid && (commentFieldControl.touched || commentFieldControl.dirty)"
 		[class.valid]="commentFieldControl.valid && (commentFieldControl.touched || commentFieldControl.dirty)"></textarea>
     <div class="errorMessage" *ngIf="commentFieldControl.errors?.required && (commentFieldControl.touched || commentFieldControl.dirty)">
@@ -49,7 +50,7 @@
   <div class="formular">
     <label>Your name</label>
     <input type="text"
-    [formControl]="usersNameControl"
+    formControlName ="usersNameControl"
    [class.invalid]="usersNameControl.invalid && (usersNameControl.touched || usersNameControl.dirty)"
    [class.valid]="usersNameControl.valid && (usersNameControl.touched || usersNameControl.dirty)"/><br/>
    <div class="errorMessage" *ngIf="usersNameControl.errors?.required && (usersNameControl.touched || usersNameControl.dirty)">
@@ -57,8 +58,9 @@
    </div>
   </div>
 
-  <button class="btn" (click)="showWhatUserWrote()" [disabled]="!reviewForm.valid">Send</button>
+  <button class="btn" (click)="showWhatUserWrote()" [ngClass]="{'disabled':!reviewForm.valid}">Send</button>
 
+  </div>
+  <app-show-review [comments]="comments"></app-show-review>
 
-  <app-show-review [reviewInfo]="formContent"></app-show-review>
 </div>
